@@ -4,9 +4,6 @@
     "example_option": "option"
   },
   "presets": {
-    "Default": {
-      "customer_layout": "theme",
-      "example_option": "option",
       "color_schemes": {
         "scheme-1": {
           "settings": {
@@ -51,8 +48,18 @@
             "secondary_button_label": "#FFFFFF",
             "shadow": "#121212"
           }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#334FB4",
+            "background_gradient": "",
+            "text": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#334FB4",
+            "secondary_button_label": "#FFFFFF",
+            "shadow": "#121212"
+          }
         }
-      }
     }
   }
 }
