@@ -5,6 +5,14 @@
       {% render 'color-mode-switch' %}
 
       {% render 'site-nav', selected_menu: section.settings.desktop_menu %}
+
+      <div class="header-right">
+        <ul>
+          <li>{% render 'icon--search' %}</li>
+          <li>{% render 'icon--account' %}</li>
+          <li>{% render 'mini-cart' %}</li>
+        </ul>
+      </div>
     </div>
 
   {% when 'left_logo' %}
