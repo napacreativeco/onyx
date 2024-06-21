@@ -6,9 +6,8 @@
   "presets": {
     "Naked": {
       "customer_layout": "theme",
-      "example_option": "option"
-    },
-    "color_schemes": {
+      "example_option": "option",
+      "color_schemes": {
         "scheme-1": {
           "settings": {
             "background": "#FFFFFF",
@@ -54,5 +53,6 @@
           }
         }
       }
+    }
   }
 }
