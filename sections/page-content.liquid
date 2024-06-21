@@ -1,0 +1,32 @@
+<div class="page-content-row">
+    {{ page.content }}
+</div>
+
+
+{% schema %}
+    {
+      "name": "Page Content",
+      "tag": "section",
+      "class": "page-content-section",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Page Content"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Slideshow",
+          "settings": {
+            "title": "Page Content"
+          }
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
+    

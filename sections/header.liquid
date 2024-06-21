@@ -1,0 +1,134 @@
+{% case section.settings.header_layout %}
+
+  {% when 'center_logo' %}
+    <div class="header--center-logo header-row">
+      {% render 'color-mode-switch' %}
+
+      {% render 'site-nav', selected_menu: section.settings.desktop_menu %}
+    </div>
+
+  {% when 'left_logo' %}
+    <div class="header--left-logo header-row">
+
+    </div>
+
+  {% when 'center_logo_minimal' %}
+    <div class="header--minimal-center-logo header-row">
+      
+    </div>
+
+  {% when 'left_logo_minimal' %}
+    <div class="header--minimal-left-logo header-row">
+
+    </div>
+
+{% endcase %}
+
+
+{% schema %}
+    {
+      "name": "Header",
+      "tag": "header",
+      "class": "header",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "default": "scheme_1",
+          "label": "Color Scheme"
+        },
+        {
+          "type": "link_list",
+          "id": "desktop_menu",
+          "label": "Desktop Menu"
+        },
+        {
+          "type": "link_list",
+          "id": "mobile_menu",
+          "label": "Mobile Menu"
+        },
+        {
+          "type": "radio",
+          "id": "dropdown_type",
+          "label": "Dropdown Type",
+          "options": [
+            {
+              "value": "classic_dropdown",
+              "label": "Classic"
+            },
+            {
+              "value": "megamenu_dropdown",
+              "label": "Mega Menu"
+            }
+          ],
+          "default": "classic_dropdown"
+        },
+        {
+          "type": "select",
+          "id": "header_layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "center_logo",
+              "label": "Center Logo, Menu Left"
+            },
+            {
+              "value": "left_logo",
+              "label": "Left Logo, Menu Center"
+            },
+            {
+              "value": "center_logo_minimal",
+              "label": "Minimal, Center Logo"
+            },
+            {
+              "value": "left_logo_minimal",
+              "label": "Minimal, Left Logo"
+            }
+          ],
+          "default": "center_logo"
+        },
+        {
+          "type": "checkbox",
+          "id": "transparent_option",
+          "label": "Transparent Header"
+        },
+        {
+          "type": "checkbox",
+          "id": "sticky_header",
+          "label": "Sticky Header"
+        },
+        {
+          "type": "range",
+          "id": "vertical_padding",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Vertical Padding",
+          "default": 4
+        },
+        {
+          "type": "range",
+          "id": "horizontal_padding",
+          "min": 0,
+          "max": 14,
+          "step": 1,
+          "unit": "px",
+          "label": "Horizontal Padding",
+          "default": 4
+        }
+      ],
+      "presets": [
+        {
+          "name": "Slideshow",
+          "settings": {
+            "title": "Page Content"
+          }
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
