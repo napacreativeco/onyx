@@ -20,6 +20,10 @@
   {
     "name": "Color Schemes",
     "settings": [
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
           {
             "type": "color",
             "id": "background",
@@ -62,6 +66,8 @@
             "label": "Shadow",
             "default": "#121212"
           }
+        ]
+      }
     ]
   }
 ]
