@@ -30,6 +30,58 @@
         "type": "color_background",
         "id": "background_gradient",
         "label": "Background Gradient"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Button Background",
+        "default": "#000000"
+      },
+    ]
+  },
+  {
+    "name": "Colors (Dark Mode)",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#000000"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Background Gradient"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Button Background",
+        "default": "#FFFFFF"
       }
     ]
   }
