@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-  {{ 'index.css' | asset_url | stylesheet_tag }}
+  {% comment %} {{ 'index.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
   <!--[if lt IE 9]>
   {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
