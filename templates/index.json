@@ -1,15 +1,11 @@
 {
-  "wrapper": "div.main-page",
+  "wrapper": "div.homepage",
   "sections": {
     "header": {
       "type": "header"
-    },
-    "page_content": {
-      "type": "page-content"
     }
   },
   "order": [
-    "header",
-    "page_content"
+    "header"
   ]
 }
