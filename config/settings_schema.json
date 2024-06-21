@@ -22,30 +22,30 @@
     "settings": [
       {
         "type": "color",
-        "id": "background",
+        "id": "background_light",
         "label": "Background",
         "default": "#FFFFFF"
       },
       {
         "type": "color_background",
-        "id": "background_gradient",
+        "id": "background_gradient_light",
         "label": "Background Gradient"
       },
       {
         "type": "color",
-        "id": "text_color",
+        "id": "text_color_light",
         "label": "Text",
         "default": "#000000"
       },
       {
         "type": "color",
-        "id": "button_text_color",
+        "id": "button_text_color_light",
         "label": "Button Text",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
-        "id": "button_background_color",
+        "id": "button_background_color_light",
         "label": "Button Background",
         "default": "#000000"
       },
@@ -56,30 +56,30 @@
     "settings": [
       {
         "type": "color",
-        "id": "background",
+        "id": "background_dark",
         "label": "Background",
         "default": "#000000"
       },
       {
         "type": "color_background",
-        "id": "background_gradient",
+        "id": "background_gradient_dark",
         "label": "Background Gradient"
       },
       {
         "type": "color",
-        "id": "text_color",
+        "id": "text_color_dark",
         "label": "Text",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
-        "id": "button_text_color",
+        "id": "button_text_color_dark",
         "label": "Button Text",
         "default": "#000000"
       },
       {
         "type": "color",
-        "id": "button_background_color",
+        "id": "button_background_color_dark",
         "label": "Button Background",
         "default": "#FFFFFF"
       }
