@@ -20,49 +20,48 @@
   {
     "name": "Colors",
     "settings": [
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background",
-          "default": "#FFFFFF"
-        },
-        {
-          "type": "color_background",
-          "id": "background_gradient",
-          "label": "Background Gradient",
-          "info": ""
-        },
-        {
-          "type": "color",
-          "id": "text",
-          "label": "Text",
-          "default": "#121212"
-        },
-        {
-          "type": "color",
-          "id": "button",
-          "label": "Button Background",
-          "default": "#121212"
-        },
-        {
-          "type": "color",
-          "id": "button_label",
-          "label": "Button Label",
-          "default": "#FFFFFF"
-        },
-        {
-          "type": "color",
-          "id": "secondary_button_label",
-          "label": "Secondary Button Label",
-          "default": "#121212"
-        },
-        {
-          "type": "color",
-          "id": "shadow",
-          "label": "Shadow",
-          "default": "#121212"
-        }
-
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Background Gradient",
+        "info": ""
+      },
+      {
+        "type": "color",
+        "id": "text",
+        "label": "Text",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "button",
+        "label": "Button Background",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "secondary_button_label",
+        "label": "Secondary Button Label",
+        "default": "#121212"
+      },
+      {
+        "type": "color",
+        "id": "shadow",
+        "label": "Shadow",
+        "default": "#121212"
+      }
     ]
   }
 ]
