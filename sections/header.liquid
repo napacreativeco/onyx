@@ -1,18 +1,37 @@
 {% case section.settings.header_layout %}
 
   {% when 'center_logo' %}
+    {{ 'header--center-logo.css' | asset_url | stylesheet_tag }}
+  {% when 'left_logo' %}
+  {% when 'center_logo_minimal' %}
+  {% when 'left_logo_minimal' %}
+
+{% endcase %}
+
+{% case section.settings.header_layout %}
+
+  {% when 'center_logo' %}
     <div class="header--center-logo header-row">
-      {% render 'color-mode-switch' %}
 
-      {% render 'site-nav', selected_menu: section.settings.desktop_menu %}
-
-      <div class="header-right">
-        <ul>
-          <li>{% render 'icon--search' %}</li>
-          <li>{% render 'icon--account' %}</li>
-          <li>{% render 'mini-cart' %}</li>
-        </ul>
+      <div class="header-left">
+        {% render 'color-mode-switch' %}
+        {% render 'site-nav', selected_menu: section.settings.desktop_menu %}
       </div>
+
+      <div class="header-center">
+        {% if settings.header_logo %}
+          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+        {% else %}
+          <span class="text-logo">{{ shop.name }}</span>
+        {% endif %}
+      </div>
+
+      <ul class="header-right">
+        <li>{% render 'icon--search' %}</li>
+        <li>{% render 'icon--account' %}</li>
+        <li>{% render 'mini-cart' %}</li>
+      </ul>
+
     </div>
 
   {% when 'left_logo' %}

@@ -1,0 +1,22 @@
+header {
+
+    .header-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .header--center-logo {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+    }
+
+    .header-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        align-items: center;
+    }
+
+}

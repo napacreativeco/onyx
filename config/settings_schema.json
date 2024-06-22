@@ -1,19 +1,60 @@
 [
   {
-    "name": "Welcome",
+    "name": "Logos",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our [help page on theme settings](http:\/\/docs.shopify.com\/themes\/theme-templates\/settings) to learn more about how you can make your theme customizable."
+        "type": "image_picker",
+        "id": "header_logo",
+        "label": "Header Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo"
       }
     ]
   },
   {
-    "name": "Example setting",
+    "name": "Theme Fonts",
     "settings": [
       {
-        "type": "header",
-        "content": "Example option"
+        "type": "font_picker",
+        "id": "header_font",
+        "label": "Header Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "accent_font",
+        "label": "Accent Font",
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+  {
+    "name": "Color Mode",
+    "settings":  [
+      {
+        "type": "select",
+        "id": "theme_color_mode",
+        "label": "Default Color Mode",
+        "options": [
+          {
+            "value": "dark_mode",
+            "label": "Dark Mode"
+          },
+          {
+            "value": "light_mode",
+            "label": "Light Mode"
+          }
+        ],
+        "default": "dark_mode"
       }
     ]
   },

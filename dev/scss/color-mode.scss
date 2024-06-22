@@ -1,0 +1,9 @@
+body.light_mode {
+    .light-mode-icon { display: none; }
+    .dark-mode-icon { display: block; }
+}
+
+body.dark_mode {
+    .light-mode-icon { display: block; }
+    .dark-mode-icon { display: none; }
+}
