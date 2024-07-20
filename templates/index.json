@@ -24,6 +24,7 @@
         "banner_xD6XAb": {
           "type": "banner",
           "settings": {
+            "banner_image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg",
             "destination": ""
           }
         }
