@@ -9,9 +9,9 @@
 */
 {
   "current": {
-    "header_font": "antique_olive_n4",
-    "body_font": "anonymous_pro_n4",
-    "accent_font": "mono",
+    "header_font": "claire_news_n3",
+    "body_font": "inconsolata_n4",
+    "accent_font": "inknut_antiqua_n4",
     "customer_layout": "theme",
     "example_option": "option",
     "sections": {
