@@ -53,12 +53,16 @@
    
   <style>
     {{ settings.body_font | font_face }}
+
     {{ settings.header_font | font_face }}
 
-    body {
+    :root {
       --body-font: {{ settings.body_font.family }};
       --header-font: {{ settings.header_font.family }};
-      font-family: {{ settings.body_font.family }};
+    }
+
+    body {
+      font-family: {{ settings.body_font.family }} !important;
       font-size: 14px;
     }
 
@@ -89,15 +93,15 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: {{ settings.header_font.family }};
+      font-family: {{ settings.header_font.family }} !important;
     }
 
     p {
-      font-family: var(--body-font);
+      font-family: {{ settings.body_font.family }} !important;
     }
 
     .accent-font {
-      font-family: {{ settings.accent_font }};
+      font-family: {{ settings.accent_font.family }} !important;
     }
 
     body.dark_mode button {
@@ -202,7 +206,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.hero-swiper', {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
