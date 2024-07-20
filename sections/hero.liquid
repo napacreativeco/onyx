@@ -1,0 +1,36 @@
+{% schema %}
+    {
+      "name": "Hero",
+      "tag": "section",
+      "class": "hero",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "hero_mode",
+          "label": "Hero Mode",
+          "options": [
+            {
+              "value": "slideshow_mode",
+              "label": "Slideshow"
+            },
+            {
+              "value": "single_banner",
+              "label": "Single Banner"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Hero",
+          "settings": {
+            "hero_mode": "slideshow_mode"
+          }
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

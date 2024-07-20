@@ -1,21 +1,74 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .header-left div,
+  .header-center div,
+  .header-right div {
+    padding-top: {{ section.settings.vertical_padding }}px;
+    padding-bottom: {{ section.settings.vertical_padding }}px;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    padding-left: {{ section.settings.horizontal_padding }}px;
+    padding-right: {{ section.settings.horizontal_padding }}px;
+    gap: {{ section.settings.horizontal_padding }}px;
+  }
+
+  .text-logo {
+    font-family: var(--header-font);
+    white-space: nowrap;
+    font-size: {{ section.settings.text_logo_size }}px;
+  }
+
+  /* Submenu */
+  body.dark_mode .navbar-submenu {
+    background: {{ settings.background_dark }};
+    border-bottom: 1px solid {{ settings.background_light }};
+  }
+
+  body.light_mode .navbar-submenu {
+    background: {{ settings.background_light }};
+    border-bottom: 1px solid {{ settings.background_light }};
+  }
+
+</style>
+
+{% if section.settings.header_dividers == true %}
+  <style>
+    body.light_mode .header-divider {
+      width: 1px;
+      height: 100%;
+      background: {{ settings.background_dark }};
+    }
+
+    body.dark_mode .header-divider {
+      width: 1px;
+      height: 100%;
+      background: {{ settings.background_light }};
+    }
+
+    body.dark_mode header {
+      border-bottom: 1px solid {{ settings.background_light }};
+    }
+
+    body.light_mode header {
+      border-bottom: 1px solid {{ settings.background_dark }};
+    }
+  </style>
+{% endif %}
+
 {% case section.settings.header_layout %}
 
-  {% when 'center_logo' %}
-    {{ 'header--center-logo.css' | asset_url | stylesheet_tag }}
-  {% when 'left_logo' %}
-  {% when 'center_logo_minimal' %}
-  {% when 'left_logo_minimal' %}
-
-{% endcase %}
-
-{% case section.settings.header_layout %}
-
+  {% comment %} Center Logo --------{% endcomment %}
   {% when 'center_logo' %}
     <div class="header--center-logo header-row">
 
       <div class="header-left">
         {% render 'color-mode-switch' %}
-        {% render 'site-nav', selected_menu: section.settings.desktop_menu %}
+        <div class="header-divider">&nbsp;</div>
+        {% render 'site-nav', selected_menu: section.settings.desktop_menu, dropdown_type: section.settings.dropdown_type %}
       </div>
 
       <div class="header-center">
@@ -26,30 +79,112 @@
         {% endif %}
       </div>
 
-      <ul class="header-right">
-        <li>{% render 'icon--search' %}</li>
-        <li>{% render 'icon--account' %}</li>
-        <li>{% render 'mini-cart' %}</li>
-      </ul>
+      <div class="header-right">
+        <div class="header-divider">&nbsp;</div>
+        <div class="search-button header-button">
+          {% render 'icon--search' %}
+        </div>
+        <div class="header-divider">&nbsp;</div>
+        <div class="account-button header-button">
+          {% render 'icon--account' %}
+        </div>
+        <div class="header-divider">&nbsp;</div>
+        <div class="cart-button header-button">
+          {% render 'mini-cart', icon: false %}
+        </div>
+      </div>
 
     </div>
 
+  {% comment %} Left Logo --------{% endcomment %}
   {% when 'left_logo' %}
     <div class="header--left-logo header-row">
+      <div class="header-left">
+        {% if settings.header_logo %}
+          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+        {% else %}
+          <span class="text-logo">{{ shop.name }}</span>
+        {% endif %}
+      </div>
 
+      <div class="header-center">
+        {% render 'site-nav', selected_menu: section.settings.desktop_menu, dropdown_type: section.settings.dropdown_type %}
+      </div>
+
+      <div class="header-right">
+        <div class="header-divider">&nbsp;</div>
+        {% render 'color-mode-switch' %}
+        <div class="header-divider">&nbsp;</div>
+        <div class="search-button header-button">{% render 'icon--search' %}</div>
+        <div class="header-divider">&nbsp;</div>
+        <div class="account-button header-button">{% render 'icon--account' %}</div>
+        <div class="header-divider">&nbsp;</div>
+        <div class="cart-button header-button">
+          {% render 'mini-cart', icon: false %}
+        </div>
+      </div>
     </div>
 
+  {% comment %} Minimal Center --------{% endcomment %}
   {% when 'center_logo_minimal' %}
     <div class="header--minimal-center-logo header-row">
+
+      <div class="header-left">
+        {% render 'color-mode-switch' %}
+        <div class="header-divider">&nbsp;</div>
+      </div>
+
+      <div class="header-center">
+        {% if settings.header_logo %}
+          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+        {% else %}
+          <span class="text-logo">{{ shop.name }}</span>
+        {% endif %}
+      </div>
       
+      <div class="header-right">
+        <div class="header-divider">&nbsp;</div>
+        {% render 'hamburger' %}
+        <div class="header-divider">&nbsp;</div>
+        <div class="cart-button header-button">
+          {% render 'mini-cart', icon: true %}
+        </div>
+      </div>
     </div>
 
+  {% comment %} Minimal Left --------{% endcomment %}
   {% when 'left_logo_minimal' %}
     <div class="header--minimal-left-logo header-row">
 
+      <div class="header-left">
+        {% if settings.header_logo %}
+          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+        {% else %}
+          <span class="text-logo">{{ shop.name }}</span>
+        {% endif %}
+      </div>
+
+      <div class="center"></div>
+
+      <div class="header-right">
+        <div class="header-divider">&nbsp;</div>
+        {% render 'hamburger' %}
+        <div class="header-divider">&nbsp;</div>
+        {% render 'color-mode-switch' %}
+        <div class="header-divider">&nbsp;</div>
+        <div class="cart-button header-button">
+          {% render 'mini-cart', icon: true %}
+        </div>
+      </div>
     </div>
 
 {% endcase %}
+
+{% if section.settings.dropdown_type == "megamenu_dropdown" %}
+  <div class="mega-menu">
+
+  </div>
+{% endif %}
 
 
 {% schema %}
@@ -62,12 +197,23 @@
         {
           "type": "link_list",
           "id": "desktop_menu",
-          "label": "Desktop Menu"
+          "label": "Desktop Menu",
+          "default": "main-menu"
         },
         {
           "type": "link_list",
           "id": "mobile_menu",
           "label": "Mobile Menu"
+        },
+        {
+          "type": "range",
+          "id": "text_logo_size",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Text Logo Size",
+          "default": 28
         },
         {
           "type": "radio",
@@ -120,10 +266,16 @@
           "label": "Sticky Header"
         },
         {
+          "type": "checkbox",
+          "id": "header_dividers",
+          "label": "Header Dividers",
+          "default": true
+        },
+        {
           "type": "range",
           "id": "vertical_padding",
           "min": 0,
-          "max": 20,
+          "max": 10,
           "step": 1,
           "unit": "px",
           "label": "Vertical Padding",
@@ -133,11 +285,11 @@
           "type": "range",
           "id": "horizontal_padding",
           "min": 0,
-          "max": 14,
+          "max": 12,
           "step": 1,
           "unit": "px",
           "label": "Horizontal Padding",
-          "default": 4
+          "default": 12
         }
       ],
       "presets": [

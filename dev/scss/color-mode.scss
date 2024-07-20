@@ -1,9 +1,12 @@
+.light-mode-icon svg { width: 20px; height: 20px; }
+.dark-mode-icon svg { width: 18px; height: 18px; }
+
 body.light_mode {
     .light-mode-icon { display: none; }
-    .dark-mode-icon { display: block; }
+    .dark-mode-icon { display: flex; }
 }
 
 body.dark_mode {
-    .light-mode-icon { display: block; }
+    .light-mode-icon { display: flex; }
     .dark-mode-icon { display: none; }
 }

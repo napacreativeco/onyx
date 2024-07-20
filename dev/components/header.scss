@@ -1,0 +1,70 @@
+.header-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: stretch;
+    justify-content: center;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .header-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        svg {
+            width: 20px;
+        }
+
+        svg.arrow-down {
+            path {
+                stroke: var(--white);
+            }
+        }
+    }
+
+    .header-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+
+        svg {
+            width: 20px;
+            fill: var(--black);
+        }
+
+        .search-button svg {
+            path {
+                stroke: var(--white);
+            }
+        }
+        .account-button svg {
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+
+    .cart-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+    }
+
+}

@@ -1,1 +1,5 @@
-{{ 'Cart ' | escape }}{{ cart.item_count }}
+{% if icon == false %}
+    {{ 'Cart ' | escape }}{{ '(' | escape }}{{ cart.item_count }}{{ ')' | escape }}
+{% else %}
+    {% render 'icon--cart' %}{{ '(' | escape }}{{ cart.item_count }}{{ ')' | escape }}
+{% endif %}

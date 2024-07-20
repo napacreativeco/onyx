@@ -1,0 +1,21 @@
+<style>
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+    body.dark_mode .hamburger .slice {
+        width: 38px;
+        height: 2px;
+        display: block;
+        padding: 0px;
+        background: {{ settings.background_light }};
+    }
+</style>
+<div class="hamburger">
+    <div class="slice">&nbsp;</div>
+    <div class="slice">&nbsp;</div>
+    <div class="slice">&nbsp;</div>
+</div>

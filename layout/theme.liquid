@@ -46,25 +46,54 @@
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
   <script>jQuery('html').removeClass('no-js').addClass('js');</script>
 
-  {{ 'index.css' | asset_url | stylesheet_tag }}
-
+  {% comment %} {% assign header_font = settings.header_font %} {% endcomment %}
+  {% comment %} {% assign body_text = settings.body_font %} {% endcomment %}
+  {% comment %} {{ settings.header_font | font_face }}
+  {{ settings.body_font | font_face }} {% endcomment %}
+   
   <style>
+    {{ settings.body_font | font_face }}
+    {{ settings.header_font | font_face }}
+
+    body {
+      --body-font: {{ settings.body_font.family }};
+      --header-font: {{ settings.header_font.family }};
+      font-family: {{ settings.body_font.family }};
+      font-size: 14px;
+    }
+
     body.dark_mode {
       background: {{ settings.background_dark }};
       color: {{ settings.text_color_dark }};
+
+      p, a, button, h1, h2, h3, h4, h5, h6 {
+        color: {{ settings.text_color_dark }};
+      }
+
+      --black: {{ settings.background_dark }};
+      --white: {{ settings.background_light }};
+
     }
 
     body.light_mode {
       background: {{ settings.background_light }};
       color: {{ settings.text_color_light }};
+
+      p, a, button, h1, h2, h3, h4, h5, h6 {
+        color: {{ settings.text_color_light }};
+      }
+
+      --white: {{ settings.background_dark }};
+      --black: {{ settings.background_light }};
+
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: {{ settings.header_font }};
+      font-family: {{ settings.header_font.family }};
     }
 
     p {
-      font-family: {{ settings.body_font }};
+      font-family: var(--body-font);
     }
 
     .accent-font {
@@ -82,6 +111,8 @@
     }
   </style>
 
+  {{ 'index.css' | asset_url | stylesheet_tag }}  
+
 </head>
 
 <body id="{{ page_title | handle }}" class="{{ settings.theme_color_mode }} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
@@ -93,59 +124,99 @@
   </main>
 
   <footer>
-    Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.
+    <p>Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
   </footer>
+
+  <script>
+    (function($) {
+
+      /* Color Modes */
+      $('.light-mode-icon').on('click', function() {
+        $('body').removeClass('dark_mode');
+        $('body').addClass('light_mode');
+      });
+
+      $('.dark-mode-icon').on('click', function() {
+        $('body').removeClass('light_mode');
+        $('body').addClass('dark_mode');
+      });
+
+
+      /* Sub Menu */
+      // $('.has-dropdown').on('mouseenter', function() {
+      //   var targ = $(this).attr('data-menu');
+
+      //     $('.'+targ).css({
+      //       display: 'block'
+      //     }).css({
+      //       opacity: 1,
+      //       top: '100%'
+      //     }); 
+      // }); 
+
+      // $('.navbar-submenu').on('mouseleave', function() {
+      //   $('.navbar-submenu').css({
+      //     top: '0%',
+      //     opacity: '0'
+      //   }).css({
+      //     display: 'none'
+      //   });
+      // });
+
+    })(jQuery);
+  </script>
 
   <script type="application/json" data-ajax-cart-initial-state>
     {{ cart | json }}
   </script>
 
-<script type="module">
-  import '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}';
-</script>
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}';
+  </script>
 
-<script type="application/json" data-ajax-cart-configuration >
-  {
-    "addToCartCssClass": "js-my-cart-open"
-  }
-</script>
-
-{{ 'format_money.js' | asset_url | script_tag }}
-<script type="module">
-  import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}'
-
-
-  let USDollar = new Intl.NumberFormat('en-US', {
-    style: 'decimal',
-    maximumFractionDigits: 0,
-    trailingZeroDisplay: 'stripIfInteger'
-  });
-
-  subscribeToCartStateUpdate(( state, isCartUpdated ) => {
-    var total = Shopify.formatMoney(state.cart.total_price);
-    var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
-    $('.total-value').text(total.substring(0, subtotal.length - 3));
-    $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+  <script type="application/json" data-ajax-cart-configuration >
+    {
+      "addToCartCssClass": "js-my-cart-open"
     }
-  });
-</script>
+  </script>
 
-{{ 'shop.js'  | asset_url | script_tag }}
-{{ 'index.js' | asset_url | script_tag }}
+  {{ 'format_money.js' | asset_url | script_tag }}
+
+  <script type="module">
+    import { subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.11.0.js" | asset_url }}'
+
+
+    let USDollar = new Intl.NumberFormat('en-US', {
+      style: 'decimal',
+      maximumFractionDigits: 0,
+      trailingZeroDisplay: 'stripIfInteger'
+    });
+
+    subscribeToCartStateUpdate(( state, isCartUpdated ) => {
+      var total = Shopify.formatMoney(state.cart.total_price);
+      var subtotal = Shopify.formatMoney(state.cart.items_subtotal_price);
+      $('.total-value').text(total.substring(0, subtotal.length - 3));
+      $('.subtotal-value').text(subtotal.substring(0, subtotal.length - 3));
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+  </script>
+
+  {{ 'shop.js'  | asset_url | script_tag }}
+  {{ 'index.js' | asset_url | script_tag }}
 
 
 </body>
