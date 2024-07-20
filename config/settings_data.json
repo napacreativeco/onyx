@@ -9,8 +9,8 @@
 */
 {
   "current": {
-    "header_font": "serif",
-    "body_font": "mono",
+    "header_font": "antique_olive_n4",
+    "body_font": "akko_n4",
     "accent_font": "mono",
     "customer_layout": "theme",
     "example_option": "option",
