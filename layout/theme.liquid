@@ -59,6 +59,8 @@
     :root {
       --body-font: {{ settings.body_font.family }};
       --header-font: {{ settings.header_font.family }};
+
+      --border-width: 2px;
     }
 
     body {
@@ -207,11 +209,12 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.hero-swiper', {
-      // Optional parameters
       direction: 'horizontal',
       loop: true,
-
-      // If we need pagination
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true

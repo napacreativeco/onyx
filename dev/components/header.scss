@@ -18,6 +18,11 @@
         align-items: center;
         justify-content: flex-start;
 
+        .color-mode-switch {
+            padding: 0 6px;
+            cursor: pointer;
+        }
+
         svg {
             width: 20px;
         }

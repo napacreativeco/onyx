@@ -1,26 +1,90 @@
 {{ 'component--hero-slideshow.css' | asset_url | stylesheet_tag }}
 
-<div class="swiper hero-swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    {% for block in section.blocks %}
-      <div class="swiper-slide">
-        {% if block.settings.image == blank %}
-          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-        {% else %}
-          Slide 1
-        {% endif %}
+{% case section.settings.hero_mode %}
+
+  {% when 'slideshow_mode' %}
+    <div class="swiper hero-swiper">
+      
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+
+            {% if block.settings.image == blank %}
+              <div class="slide-image">
+                {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% else %}
+              <div class="slide-image">
+                <img src="{{ block.settings.image | image_url: width: 2200 }}" alt="{{ block.settings.image.alt }}" />
+              </div>
+            {% endif %}
+
+            <div class="slide-text">
+              <p>{{ block.settings.subtitle }}</p>
+              <h2>{{ block.settings.title }}</h2>
+            </div>
+
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 
-</div>
+      {% comment %} 
+      //=========================
+      // OVERLAY NAVIGATION
+      //=========================
+      {% endcomment %}
+      {% if section.settings.hero_nav_mode == 'overlay_navigation' %}
+        <div class="swiper-navigation overlay">
+
+          <div class="left">
+            <div class="swiper-pagination"></div>
+          </div>
+          
+          <div class="right">
+            <div class="swiper-button-prev">
+              {{ 'Prev' | escape }}
+            </div>
+            <div class="swiper-button-next">
+              {{ 'Next' | escape }}
+            </div>
+          </div>
+
+        </div>
+      {% endif %}
+
+      {% comment %} 
+      //=========================
+      // BELOW NAVIGATION
+      //=========================
+      {% endcomment %}
+      {% if section.settings.hero_nav_mode == 'below_navigation' %}
+        <div class="swiper-navigation below">
+
+          <div class="left">
+            <div class="swiper-pagination"></div>
+          </div>
+          
+          <div class="right">
+            <div class="swiper-button-prev">
+              {{ 'Prev' | escape }}
+            </div>
+            <div class="swiper-button-next">
+              {{ 'Next' | escape }}
+            </div>
+          </div>
+
+        </div>
+      {% endif %}
+    </div>
+  {% when 'single_banner' %}
+    <div class="hero-banner">
+      {% for block in section.blocks %}
+        {{ block.settings.banner_image }}
+      {% endfor %}
+    </div>
+          
+{% endcase %}
 
 {% schema %}
     {
@@ -33,6 +97,7 @@
           "type": "select",
           "id": "hero_mode",
           "label": "Hero Mode",
+          "default": "slideshow_mode",
           "options": [
             {
               "value": "slideshow_mode",
@@ -41,6 +106,22 @@
             {
               "value": "single_banner",
               "label": "Single Banner"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "hero_nav_mode",
+          "label": "Navigation Mode",
+          "default": "below_navigation",
+          "options": [
+            {
+              "value": "overlay_navigation",
+              "label": "Overlay"
+            },
+            {
+              "value": "below_navigation",
+              "label": "Below"
             }
           ]
         }
@@ -57,13 +138,13 @@
             },
             {
               "type": "text",
-              "id": "headline",
-              "label": "Headline"
+              "id": "subtitle",
+              "label": "Subtitle"
             },
             {
               "type": "textarea",
-              "id": "description",
-              "label": "Description"
+              "id": "title",
+              "label": "Title"
             },
             {
               "type": "url",
