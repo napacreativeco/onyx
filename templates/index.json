@@ -17,7 +17,15 @@
           "type": "slide",
           "settings": {
             "subtitle": "THRONE DEVELOPMENT STUDIO",
+            "subtitle_size": 18,
+            "subtitle_size_mobile": 14,
+            "subtitle_lineheight": 0.9,
+            "subtitle_lineheight_mobile": 0.9,
             "title": "Modern Design standards applied seamlessly to your online store",
+            "title_size": 56,
+            "title_size_mobile": 46,
+            "title_lineheight": 0.9,
+            "title_lineheight_mobile": 0.9,
             "destination": ""
           }
         },
@@ -43,10 +51,29 @@
       "settings": {
         "title": ""
       }
+    },
+    "latest_products_C6RPiq": {
+      "type": "latest-products",
+      "blocks": {
+        "collection_cGwYFq": {
+          "type": "collection",
+          "settings": {
+            "latest_products_collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "collection_cGwYFq"
+      ],
+      "settings": {
+        "latest_products_title": "Latest Products",
+        "latest_products_amount": "4"
+      }
     }
   },
   "order": [
     "hero_EeACfx",
-    "main"
+    "main",
+    "latest_products_C6RPiq"
   ]
 }
