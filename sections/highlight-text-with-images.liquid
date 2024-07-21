@@ -1,0 +1,71 @@
+{% capture highlight_text %}
+    {{ section.settings.highlight_text }}
+{% endcapture %}
+
+<div class="highlight-text-row">
+    {{ highlight_text }}
+</div>
+
+<script>
+    function go() {
+        var text = jQuery('.highlight-text-row').text();
+        console.log(text);
+    }
+    go();
+</script>
+
+{% schema %}
+    {
+      "name": "Highlight Text w/ Images",
+      "tag": "section",
+      "class": "highlight-text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "highlight_text",
+          "label": "Highlight Text",
+          "default": "Brand new Designs, [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]"
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 30,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "name": "Image",
+            "type": "image",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "highlight_text_image",
+                    "label": "Image"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Highlight Text with Images"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

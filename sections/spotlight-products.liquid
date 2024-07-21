@@ -1,14 +1,44 @@
 {{ 'component--spotlight-slider.css' | asset_url | stylesheet_tag }}
 
+<style>
+    .spotlight-slider {
+        padding: 0 0 0 {{ section.settings.side_padding }}px;
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+    }
+    h2.spotlight-section-title {
+        font-size: {{ section.settings.spotlight_section_title_size }}px;
+    }
+
+    p.spotlight-section-description {
+        font-size: {{ section.settings.spotlight_section_description_size }}px;
+    }
+</style>
+
 <div class="spotlight-slider-row">
     <div class="left">
-        <h2>{{ section.settings.spotlight_slider_title }}</h2>
-        <p>{{ section.settings.spotlight_slider_description }}</p>
+        <div class="top">
+            <h2 class="spotlight-section-title">{{ section.settings.spotlight_slider_title }}</h2>
+            <p class="spotlight-section-description">{{ section.settings.spotlight_slider_description }}</p>
+        </div>
+
+        <div class="spotlight-controls">
+            <div class="view-more">
+                <a class="spotlight-view-more" href="{{ section.settings.spotlight_slider_collection.url }}" title="{{ section.settings.spotlight_slider_collection.title }}">
+                    {{ 'View more' | escape }}
+                </a>
+            </div>
+            <div class="spotlight-slideshow-controls">
+                <div class="spotlight-prev spotlight-control">{% render 'icon--arrow-left' %}</div>
+                <div class="spotlight-next spotlight-control">{% render 'icon--arrow-right' %}</div>
+            </div>
+        </div>
     </div>
     <div class="right">
-        {% for product in section.settings.spotlight_slider_collection.products %}
-            {% render 'card--product', product: product %}
-        {% endfor %}
+        <ul class="product-loop">
+            {% for product in section.settings.spotlight_slider_collection.products %}
+                {% render 'card--product', product: product %}
+            {% endfor %}
+        </ul>
     </div>
 </div>
 
@@ -25,10 +55,28 @@
           "default": "Our Spotlight Products"
         },
         {
+            "type": "range",
+            "id": "spotlight_section_title_size",
+            "label": "Title Size",
+            "min": 20,
+            "max": 64,
+            "step": 1,
+            "default": 46
+        },
+        {
           "type": "textarea",
           "id": "spotlight_slider_description",
           "label": "Description",
           "default": "Browse our full collection of Hoodies and Sweaters"
+        },
+        {
+            "type": "range",
+            "id": "spotlight_section_description_size",
+            "label": "Description Size",
+            "min": 12,
+            "max": 24,
+            "step": 1,
+            "default": 14
         },
         {
             "type": "range",
@@ -43,6 +91,24 @@
             "type": "collection",
             "id": "spotlight_slider_collection",
             "label": "Collection"
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 30,
+            "max": 100,
+            "step": 1
         }
       ],
       "presets": [
