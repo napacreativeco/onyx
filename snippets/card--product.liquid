@@ -1,0 +1,11 @@
+<li class="product-card">
+    <div class="image">
+        <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
+    </div>
+    
+    <div class="data">
+        <div class="title">
+            {{ product.title }}
+        </div>
+    </div>
+</li>

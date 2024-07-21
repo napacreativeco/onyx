@@ -1,0 +1,57 @@
+{{ 'component--spotlight-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="spotlight-slider-row">
+    <div class="left">
+        <h2>{{ section.settings.spotlight_slider_title }}</h2>
+        <p>{{ section.settings.spotlight_slider_description }}</p>
+    </div>
+    <div class="right">
+        {% for product in section.settings.spotlight_slider_collection.products %}
+            {% render 'card--product', product: product %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Spotlight Product Slider",
+      "tag": "section",
+      "class": "spotlight-slider",
+      "settings": [
+        {
+          "type": "text",
+          "id": "spotlight_slider_title",
+          "label": "Title",
+          "default": "Our Spotlight Products"
+        },
+        {
+          "type": "textarea",
+          "id": "spotlight_slider_description",
+          "label": "Description",
+          "default": "Browse our full collection of Hoodies and Sweaters"
+        },
+        {
+            "type": "range",
+            "id": "spotlight_slider_count",
+            "label": "Products",
+            "min": 4,
+            "max": 16,
+            "step": 1,
+            "default": 8
+        },
+        {
+            "type": "collection",
+            "id": "spotlight_slider_collection",
+            "label": "Collection"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Latest Collections"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

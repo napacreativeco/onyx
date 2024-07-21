@@ -73,9 +73,9 @@
 
       <div class="header-center">
         {% if settings.header_logo %}
-          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+          <a href="{{ shop.url }}"><img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" /></a>
         {% else %}
-          <span class="text-logo">{{ shop.name }}</span>
+          <a href="{{ shop.url }}"><span class="text-logo">{{ shop.name }}</span></a>
         {% endif %}
       </div>
 
@@ -101,9 +101,9 @@
     <div class="header--left-logo header-row">
       <div class="header-left">
         {% if settings.header_logo %}
-          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+          <a href="{{ shop.url }}"><img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" /></a>
         {% else %}
-          <span class="text-logo">{{ shop.name }}</span>
+          <a href="{{ shop.url }}"><span class="text-logo">{{ shop.name }}</span></a>
         {% endif %}
       </div>
 
@@ -136,9 +136,9 @@
 
       <div class="header-center">
         {% if settings.header_logo %}
-          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+          <a href="{{ shop.url }}"><img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" /></a>
         {% else %}
-          <span class="text-logo">{{ shop.name }}</span>
+          <a href="{{ shop.url }}"><span class="text-logo">{{ shop.name }}</span></a>
         {% endif %}
       </div>
       
@@ -158,9 +158,9 @@
 
       <div class="header-left">
         {% if settings.header_logo %}
-          <img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" />
+          <a href="{{ shop.url }}"><img src="{{ settings.header_logo | image_url: width: '500' }}" alt="{{ site.name }}" /></a>
         {% else %}
-          <span class="text-logo">{{ shop.name }}</span>
+          <a href="{{ shop.url }}"><span class="text-logo">{{ shop.name }}</span></a>
         {% endif %}
       </div>
 
