@@ -60,10 +60,17 @@
           "settings": {
             "latest_products_collection": "frontpage"
           }
+        },
+        "collection_Mb4yMD": {
+          "type": "collection",
+          "settings": {
+            "latest_products_collection": "sales"
+          }
         }
       },
       "block_order": [
-        "collection_cGwYFq"
+        "collection_cGwYFq",
+        "collection_Mb4yMD"
       ],
       "settings": {
         "latest_products_title": "Latest Products",
