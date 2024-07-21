@@ -16,8 +16,8 @@
         "slide_3NpMkA": {
           "type": "slide",
           "settings": {
-            "headline": "Temp Headline",
-            "description": "Testing the description",
+            "subtitle": "THRONE DEVELOPMENT STUDIO",
+            "title": "Modern Design standards applied seamlessly to your online store",
             "destination": ""
           }
         },
@@ -34,7 +34,8 @@
         "banner_xD6XAb"
       ],
       "settings": {
-        "hero_mode": "slideshow_mode"
+        "hero_mode": "slideshow_mode",
+        "hero_nav_mode": "below_navigation"
       }
     },
     "main": {
