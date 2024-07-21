@@ -1,0 +1,130 @@
+{{ 'component--browse-collections.css' | asset_url | stylesheet_tag }}
+
+<style>
+    p.collections-slider-subtitle {
+        font-size: {{ section.settings.subtitle_size }}px;
+    }
+    h2.collections-slider-title {
+        font-size: {{ section.settings.title_size }}px;
+    }
+</style>
+
+<div class="collections-slider-row">
+    <div class="title">
+        <p class="collections-slider-subtitle">{{ section.settings.subtitle }}</p>
+        <h2 class="collections-slider-title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="slider">
+        {% capture hidden_collections %}
+            {% for block in section.blocks %}
+                    {{ block.collection.id }}
+            {% endfor %}
+        {% endcapture %}
+
+        {% for collection in collections %}
+            {% if collection.title != hidden_collections %}
+                {% render 'card--collection', collection: collection %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Collections Slider",
+      "tag": "section",
+      "class": "collections-slider",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Browse Collections"
+        },
+        {
+            "type": "range",
+            "id": "title_size",
+            "label": "Title Size",
+            "min": 24,
+            "max": 64,
+            "step": 1,
+            "default": 44
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Shop Collections"
+        },
+        {
+            "type": "range",
+            "id": "subtitle_size",
+            "label": "Subtitle Size",
+            "min": 12,
+            "max": 24,
+            "step": 1,
+            "default": 16
+        },
+        {
+          "type": "select",
+          "id": "products_amount",
+          "label": "Amount to show",
+          "default": "4",
+          "options": [
+            {
+                "value": "4",
+                "label": "4"
+            },
+            {
+                "value": "8",
+                "label": "8"
+            },
+            {
+                "value": "12",
+                "label": "12"
+            }
+          ]
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 30,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "collection",
+            "name": "Hidden Collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "hidden_collection",
+                    "label": "Hide Collection"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Collections Slider"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
