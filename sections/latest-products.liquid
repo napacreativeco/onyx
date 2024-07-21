@@ -1,0 +1,57 @@
+{% schema %}
+    {
+      "name": "Latest Products",
+      "tag": "section",
+      "class": "latest-products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "latest_products_title",
+          "label": "Title",
+          "default": "Latest Products"
+        },
+        {
+          "type": "select",
+          "id": "latest_products_amount",
+          "label": "Amount to show",
+          "default": "4",
+          "options": [
+            {
+                "value": "4",
+                "label": "4"
+            },
+            {
+                "value": "8",
+                "label": "8"
+            },
+            {
+                "value": "12",
+                "label": "12"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+            "name": "Collection",
+            "type": "collection",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "latest_products_collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Latest Collections"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
