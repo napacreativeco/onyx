@@ -16,8 +16,8 @@
         "slide_3NpMkA": {
           "type": "slide",
           "settings": {
-            "headline": "",
-            "description": "",
+            "headline": "Temp Headline",
+            "description": "Testing the description",
             "destination": ""
           }
         },
