@@ -80,15 +80,28 @@
       "type": "spotlight-products",
       "settings": {
         "spotlight_slider_title": "Our Spotlight Products",
+        "spotlight_section_title_size": 46,
         "spotlight_slider_description": "Browse our full collection of Hoodies and Sweaters",
+        "spotlight_section_description_size": 14,
         "spotlight_slider_count": 8,
-        "spotlight_slider_collection": "frontpage"
+        "spotlight_slider_collection": "frontpage",
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "highlight_text_with_images_UyEbx6": {
+      "type": "highlight-text-with-images",
+      "settings": {
+        "highlight_text": "Brand new Designs, [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]",
+        "side_padding": 12,
+        "bottom_margin": 60
       }
     }
   },
   "order": [
     "hero_EeACfx",
     "latest_products_C6RPiq",
-    "spotlight_products_CRnWwQ"
+    "spotlight_products_CRnWwQ",
+    "highlight_text_with_images_UyEbx6"
   ]
 }
