@@ -43,7 +43,9 @@
       ],
       "settings": {
         "hero_mode": "slideshow_mode",
-        "hero_nav_mode": "below_navigation"
+        "hero_nav_mode": "below_navigation",
+        "hero_image_tint": 0.8,
+        "hero_margin_bottom": 60
       }
     },
     "latest_products_C6RPiq": {
@@ -68,12 +70,25 @@
       ],
       "settings": {
         "latest_products_title": "Latest Products",
-        "latest_products_amount": "4"
+        "latest_products_title_size": 44,
+        "latest_products_amount": "4",
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "spotlight_products_CRnWwQ": {
+      "type": "spotlight-products",
+      "settings": {
+        "spotlight_slider_title": "Our Spotlight Products",
+        "spotlight_slider_description": "Browse our full collection of Hoodies and Sweaters",
+        "spotlight_slider_count": 8,
+        "spotlight_slider_collection": "frontpage"
       }
     }
   },
   "order": [
     "hero_EeACfx",
-    "latest_products_C6RPiq"
+    "latest_products_C6RPiq",
+    "spotlight_products_CRnWwQ"
   ]
 }
