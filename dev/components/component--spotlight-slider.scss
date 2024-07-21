@@ -71,7 +71,7 @@
         gap: 8px;
 
         li {
-            max-width: 220px;
+            width: calc(100vw / 4.5);
         }
     }
 }

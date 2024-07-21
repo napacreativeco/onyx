@@ -1,0 +1,80 @@
+{% schema %}
+    {
+      "name": "Pinboard",
+      "tag": "section",
+      "class": "pinboard",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "range",
+            "id": "image_height",
+            "label": "Height",
+            "min": 30,
+            "max": 100,
+            "step": 10,
+            "default": 50
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 30,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "product",
+            "name": "Product Pin",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "pinned_product",
+                    "label": "Product"
+                },
+                {
+                    "type": "range",
+                    "id": "x_position",
+                    "label": "Horizontal Position",
+                    "min": 5,
+                    "max": 95,
+                    "step": 1,
+                    "default": 50
+                },
+                {
+                    "type": "range",
+                    "id": "y_position",
+                    "label": "Vertical Position",
+                    "min": 5,
+                    "max": 95,
+                    "step": 1,
+                    "default": 50
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Collections Slider"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

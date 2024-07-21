@@ -22,19 +22,19 @@
 
 {% for block in section.blocks %}
     {% if forloop.rindex == 1 %}
-        {% capture img_one %}
+        {%- capture img_one -%}
             <img class="highlight-text-image image-one" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" />
-        {% endcapture %}
+        {%- endcapture -%}
     {% endif %}
     {% if forloop.rindex == 2 %}
-        {% capture img_two %}
+        {%- capture img_two -%}
             <img class="highlight-text-image image-two" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" /> 
-        {% endcapture %}
+        {%- endcapture -%}
     {% endif %}
     {% if forloop.rindex == 3 %}
-        {% capture img_three %}
+        {%- capture img_three -%}
             <img class="highlight-text-image image-three" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" /> 
-        {% endcapture %}
+        {%- endcapture -%}
     {% endif %}
 {% endfor %}
 

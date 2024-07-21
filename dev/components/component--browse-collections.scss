@@ -1,3 +1,53 @@
 .collections-slider-row {
-    
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin: 0 0 24px 0;
+
+        .controls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+
+            svg {
+                width: 12px;
+
+                path {
+                    stroke: var(--white);
+                }
+            }
+
+            .collections-control {
+                width: 40px;
+                height: 40px;
+                border: var(--border-width) solid var(--white);
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .slider {
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+            li {
+                width: calc(100vw / 3.5);
+
+                .title {
+                    font-family: var(--header-font);
+                    font-size: 24px;
+                }
+            }
+        }
+    }
 }

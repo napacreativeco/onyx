@@ -1,6 +1,11 @@
 {{ 'component--browse-collections.css' | asset_url | stylesheet_tag }}
+{{ 'component--card-collection.css' | asset_url | stylesheet_tag }}
 
 <style>
+    .collections-slider-row {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+    }
     p.collections-slider-subtitle {
         font-size: {{ section.settings.subtitle_size }}px;
     }
@@ -10,23 +15,34 @@
 </style>
 
 <div class="collections-slider-row">
+    
     <div class="title">
-        <p class="collections-slider-subtitle">{{ section.settings.subtitle }}</p>
-        <h2 class="collections-slider-title">{{ section.settings.title }}</h2>
+        <div class="text">
+            <p class="collections-slider-subtitle">{{ section.settings.subtitle }}</p>
+            <h2 class="collections-slider-title">{{ section.settings.title }}</h2>
+        </div>
+        <div class="controls">
+            <div class="collections-prev collections-control">{% render 'icon--arrow-left' %}</div>
+            <div class="collections-next collections-control">{% render 'icon--arrow-right' %}</div>
+        </div>
     </div>
 
     <div class="slider">
         {% capture hidden_collections %}
             {% for block in section.blocks %}
-                    {{ block.collection.id }}
+                {{ block.settings.hidden_collection.id }}
             {% endfor %}
         {% endcapture %}
+     
+        <ul>
+            {% for collection in collections %}
+                {% if hidden_collections contains collection.id %}
+                {% else %}
+                    {% render 'card--collection', collection: collection %}
+                {% endif %}
+            {% endfor %}
+        </ul>
 
-        {% for collection in collections %}
-            {% if collection.title != hidden_collections %}
-                {% render 'card--collection', collection: collection %}
-            {% endif %}
-        {% endfor %}
     </div>
 </div>
 
