@@ -125,6 +125,17 @@
     },
     "collections_slider_JR6BYH": {
       "type": "collections-slider",
+      "blocks": {
+        "collection_CgDYVA": {
+          "type": "collection",
+          "settings": {
+            "hidden_collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "collection_CgDYVA"
+      ],
       "settings": {
         "title": "Browse Collections",
         "title_size": 44,
