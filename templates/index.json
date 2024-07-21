@@ -145,6 +145,27 @@
         "side_padding": 12,
         "bottom_margin": 60
       }
+    },
+    "products_pinboard_4fVFKV": {
+      "type": "products-pinboard",
+      "blocks": {
+        "product_LHNKUi": {
+          "type": "product",
+          "settings": {
+            "pinned_product": "test-product",
+            "x_position": 50,
+            "y_position": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_LHNKUi"
+      ],
+      "settings": {
+        "image_height": 50,
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
     }
   },
   "order": [
@@ -152,6 +173,7 @@
     "latest_products_C6RPiq",
     "spotlight_products_CRnWwQ",
     "highlight_text_with_images_UyEbx6",
-    "collections_slider_JR6BYH"
+    "collections_slider_JR6BYH",
+    "products_pinboard_4fVFKV"
   ]
 }
