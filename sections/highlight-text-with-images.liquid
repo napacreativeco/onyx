@@ -1,18 +1,46 @@
+{{ 'component--highlight-text-with-images.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .highlight-text-row {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+    }
+
+    .highlight-text-row h2 {
+        font-size: {{ section.settings.text_size }}px;
+    }
+    .highlight-text-row img {
+        display: inline-block;
+        max-height: {{ section.settings.text_size }}px;
+        margin: 0;
+    }
+</style>
+
 {% capture highlight_text %}
     {{ section.settings.highlight_text }}
 {% endcapture %}
 
-<div class="highlight-text-row">
-    {{ highlight_text }}
-</div>
+{% for block in section.blocks %}
+    {% if forloop.rindex == 1 %}
+        {% capture img_one %}
+            <img class="highlight-text-image image-one" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" />
+        {% endcapture %}
+    {% endif %}
+    {% if forloop.rindex == 2 %}
+        {% capture img_two %}
+            <img class="highlight-text-image image-two" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" /> 
+        {% endcapture %}
+    {% endif %}
+    {% if forloop.rindex == 3 %}
+        {% capture img_three %}
+            <img class="highlight-text-image image-three" src="{{ block.settings.highlight_text_image | image_url: width: 60 }}" alt="{{ block.settings.highlight_text_image.alt }}" /> 
+        {% endcapture %}
+    {% endif %}
+{% endfor %}
 
-<script>
-    function go() {
-        var text = jQuery('.highlight-text-row').text();
-        console.log(text);
-    }
-    go();
-</script>
+<div class="highlight-text-row">
+    <h2>{{ highlight_text | replace: '[img1]', img_one | replace: '[img2]', img_two | replace: '[img3]', img_three }}</h2>
+</div>
 
 {% schema %}
     {
@@ -24,7 +52,16 @@
           "type": "textarea",
           "id": "highlight_text",
           "label": "Highlight Text",
-          "default": "Brand new Designs, [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]"
+          "default": "Brand new Designs [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]"
+        },
+        {
+            "type": "range",
+            "id": "text_size",
+            "label": "Text Size",
+            "min": 30,
+            "max": 96,
+            "step": 1,
+            "default": 60
         },
         {
             "type": "range",
