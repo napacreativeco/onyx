@@ -91,6 +91,31 @@
     },
     "highlight_text_with_images_UyEbx6": {
       "type": "highlight-text-with-images",
+      "blocks": {
+        "image_9VAWgn": {
+          "type": "image",
+          "settings": {
+            "highlight_text_image": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg"
+          }
+        },
+        "image_aUWjUk": {
+          "type": "image",
+          "settings": {
+            "highlight_text_image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg"
+          }
+        },
+        "image_AmG4BG": {
+          "type": "image",
+          "settings": {
+            "highlight_text_image": "shopify:\/\/shop_images\/Screenshot2023-08-10at5.01.24PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_9VAWgn",
+        "image_aUWjUk",
+        "image_AmG4BG"
+      ],
       "settings": {
         "highlight_text": "Brand new Designs, [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]",
         "side_padding": 12,
