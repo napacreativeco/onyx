@@ -118,6 +118,19 @@
       ],
       "settings": {
         "highlight_text": "Brand new Designs [img1], updated montly. [img2] Free shipping when you spend $50 or more. [img3]",
+        "text_size": 60,
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "collections_slider_JR6BYH": {
+      "type": "collections-slider",
+      "settings": {
+        "title": "Browse Collections",
+        "title_size": 44,
+        "subtitle": "Shop Collections",
+        "subtitle_size": 16,
+        "products_amount": "4",
         "side_padding": 12,
         "bottom_margin": 60
       }
@@ -127,6 +140,7 @@
     "hero_EeACfx",
     "latest_products_C6RPiq",
     "spotlight_products_CRnWwQ",
-    "highlight_text_with_images_UyEbx6"
+    "highlight_text_with_images_UyEbx6",
+    "collections_slider_JR6BYH"
   ]
 }
