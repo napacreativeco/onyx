@@ -46,12 +46,6 @@
         "hero_nav_mode": "below_navigation"
       }
     },
-    "main": {
-      "type": "page-content",
-      "settings": {
-        "title": ""
-      }
-    },
     "latest_products_C6RPiq": {
       "type": "latest-products",
       "blocks": {
@@ -80,7 +74,6 @@
   },
   "order": [
     "hero_EeACfx",
-    "main",
     "latest_products_C6RPiq"
   ]
 }
