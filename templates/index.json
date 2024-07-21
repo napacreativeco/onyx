@@ -162,6 +162,7 @@
         "product_LHNKUi"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Frame.jpg",
         "image_height": 50,
         "side_padding": 12,
         "bottom_margin": 60
