@@ -194,9 +194,7 @@
           "settings": {
             "product": "test-product",
             "headline": "Outerwear Collection Available Now",
-            "headline_size": 40,
-            "side_padding": 12,
-            "bottom_margin": 60
+            "headline_size": 40
           }
         },
         "product_783MG3": {
@@ -204,9 +202,7 @@
           "settings": {
             "product": "test-product-2",
             "headline": "Outerwear Collection Available Now",
-            "headline_size": 40,
-            "side_padding": 12,
-            "bottom_margin": 60
+            "headline_size": 40
           }
         }
       },
@@ -215,6 +211,7 @@
         "product_783MG3"
       ],
       "settings": {
+        "bottom_margin": 60
       }
     },
     "best_sellers_list_MYBGGi": {
@@ -224,16 +221,16 @@
           "type": "product",
           "settings": {
             "product": "test-product",
-            "side_padding": 12,
-            "bottom_margin": 60
+            "product_title_size": 44,
+            "product_price_size": 24
           }
         },
         "product_mDjhDn": {
           "type": "product",
           "settings": {
             "product": "test-product-2",
-            "side_padding": 12,
-            "bottom_margin": 60
+            "product_title_size": 44,
+            "product_price_size": 24
           }
         }
       },
@@ -242,7 +239,59 @@
         "product_mDjhDn"
       ],
       "settings": {
-        "title": "Best Sellers"
+        "title": "Best Sellers",
+        "section_title_size": 44,
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "multi_column_BT7mC9": {
+      "type": "multi-column",
+      "blocks": {
+        "column_CQLe4P": {
+          "type": "column",
+          "settings": {
+            "block_image_size": 100,
+            "block_title": "",
+            "block_title_size": 24,
+            "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
+            "block_text_size": 24,
+            "text_align": "left"
+          }
+        },
+        "column_LHkJLJ": {
+          "type": "column",
+          "settings": {
+            "block_image_size": 100,
+            "block_title": "",
+            "block_title_size": 24,
+            "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
+            "block_text_size": 24,
+            "text_align": "left"
+          }
+        },
+        "column_iEYwzR": {
+          "type": "column",
+          "settings": {
+            "block_image_size": 100,
+            "block_title": "",
+            "block_title_size": 24,
+            "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
+            "block_text_size": 24,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "column_CQLe4P",
+        "column_LHkJLJ",
+        "column_iEYwzR"
+      ],
+      "settings": {
+        "title": "Multi-Column Text Layout",
+        "section_title_size": 44,
+        "side_padding": 12,
+        "bottom_margin": 60
       }
     }
   },
@@ -255,6 +304,7 @@
     "products_pinboard_4fVFKV",
     "marquee_text_qE8hf6",
     "product_blocks_slider_iX9gRg",
-    "best_sellers_list_MYBGGi"
+    "best_sellers_list_MYBGGi",
+    "multi_column_BT7mC9"
   ]
 }
