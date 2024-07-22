@@ -176,6 +176,14 @@
         "side_padding": 12,
         "bottom_margin": 70
       }
+    },
+    "marquee_text_qE8hf6": {
+      "type": "marquee--text",
+      "settings": {
+        "marquee_text": "Free Shipping on orders over $50",
+        "marquee_separator": "&bull;",
+        "text_size": 80
+      }
     }
   },
   "order": [
@@ -184,6 +192,7 @@
     "spotlight_products_CRnWwQ",
     "highlight_text_with_images_UyEbx6",
     "collections_slider_JR6BYH",
-    "products_pinboard_4fVFKV"
+    "products_pinboard_4fVFKV",
+    "marquee_text_qE8hf6"
   ]
 }
