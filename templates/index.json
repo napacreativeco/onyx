@@ -256,7 +256,7 @@
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
             "block_text_size": 14,
-            "text_align": "left"
+            "text_align": "center"
           }
         },
         "column_LHkJLJ": {
@@ -267,7 +267,7 @@
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
             "block_text_size": 14,
-            "text_align": "left"
+            "text_align": "center"
           }
         },
         "column_iEYwzR": {
@@ -278,7 +278,7 @@
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
             "block_text_size": 14,
-            "text_align": "left"
+            "text_align": "center"
           }
         }
       },
