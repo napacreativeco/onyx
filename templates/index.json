@@ -156,16 +156,25 @@
             "x_position": 50,
             "y_position": 50
           }
+        },
+        "product_Aidztt": {
+          "type": "product",
+          "settings": {
+            "pinned_product": "test-product-2",
+            "x_position": 69,
+            "y_position": 62
+          }
         }
       },
       "block_order": [
-        "product_LHNKUi"
+        "product_LHNKUi",
+        "product_Aidztt"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Frame.jpg",
         "image_height": 80,
         "side_padding": 12,
-        "bottom_margin": 60
+        "bottom_margin": 70
       }
     }
   },
