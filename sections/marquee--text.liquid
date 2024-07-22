@@ -1,6 +1,10 @@
 {{ 'component--marquee-text.css' | asset_url | stylesheet_tag }}
 
 <style>
+    .marquee-text {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+    }
+
     .marquee .content {
         font-size: {{ section.settings.text_size }}px;
     }
@@ -40,6 +44,15 @@
             "max": 140,
             "step": 10,
             "default": 80
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 30,
+            "max": 100,
+            "step": 1
         }
       ],
       "presets": [
