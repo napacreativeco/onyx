@@ -185,6 +185,35 @@
         "text_size": 80,
         "bottom_margin": 60
       }
+    },
+    "product_blocks_slider_iX9gRg": {
+      "type": "product-blocks-slider",
+      "blocks": {
+        "product_qCLGrt": {
+          "type": "product",
+          "settings": {
+            "product": "test-product",
+            "headline": "Outerwear Collection Available Now",
+            "side_padding": 12,
+            "bottom_margin": 60
+          }
+        },
+        "product_783MG3": {
+          "type": "product",
+          "settings": {
+            "product": "test-product-2",
+            "headline": "Outerwear Collection Available Now",
+            "side_padding": 12,
+            "bottom_margin": 60
+          }
+        }
+      },
+      "block_order": [
+        "product_qCLGrt",
+        "product_783MG3"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -194,6 +223,7 @@
     "highlight_text_with_images_UyEbx6",
     "collections_slider_JR6BYH",
     "products_pinboard_4fVFKV",
-    "marquee_text_qE8hf6"
+    "marquee_text_qE8hf6",
+    "product_blocks_slider_iX9gRg"
   ]
 }
