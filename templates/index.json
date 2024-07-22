@@ -163,7 +163,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Frame.jpg",
-        "image_height": 50,
+        "image_height": 80,
         "side_padding": 12,
         "bottom_margin": 60
       }
