@@ -1,0 +1,81 @@
+{{ 'component--best-sellers-list.css' | asset_url | stylesheet_tag }}
+
+<div class="best-sellers-row">
+    <div class="title">
+        <h2>{{ section.settings.title }}</h2>
+    </div>
+
+    <ul class="list">
+        {% for block in section.blocks %}
+            <li class="list-item">
+                <div class="index">{{ forloop.index }}</div>
+
+                <div class="horizontal">
+                    <div class="image">
+                        <img src="{{ block.settings.product.featured_image | image_url: width: 500  }}" alt="{{ block.settings.product.featured_image.alt }}">
+                    </div>
+
+                    <div class="title">
+                        {{ block.settings.product.title }}
+                    </div>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% schema %}
+    {
+      "name": "Best Sellers List",
+      "tag": "section",
+      "class": "best-sellers-list",
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        }
+      ],
+      "blocks": [
+        {
+            "type": "product",
+            "name": "Product",
+            "limit": 6,
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "range",
+                    "id": "side_padding",
+                    "label": "Side Padding",
+                    "min": 0,
+                    "max": 24,
+                    "step": 1,
+                    "default": 12
+                },
+                {
+                    "type": "range",
+                    "id": "bottom_margin",
+                    "label": "Space Below",
+                    "default": 60,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Best Sellers List"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

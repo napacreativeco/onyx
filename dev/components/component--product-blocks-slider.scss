@@ -1,12 +1,104 @@
 .product-blocks-slider-row {
+    position: relative;
+    border-top: var(--border-width) solid var(--white);
+    border-bottom: var(--border-width) solid var(--white);
+
+    .left {
+        aspect-ratio: 1/1;
+        
+        img {
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+
+        .title {
+            font-family: var(--header-font);
+            font-size: 28px;
+            margin: 0 0 8px 0;
+        }
+
+        .price {
+            font-size: 18px;
+            margin: 0 0 8px 0;
+        }
+    }
 
     .variant-picker {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 10px;
+
+        font-size: 24px;
+        font-family: var(--header-font);
+
         svg {
-            width: 12px;
+            width: 16px;
+            height: 16px;
+            margin-bottom: 2px;
 
             path {
                 fill: var(--white);
             }
         }
     }
+
+    .swiper-slide {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 12px;
+    }
+
+    .swiper-controls {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 6px;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: relative;
+            transform: none;
+            line-height: 1;
+            left: 0;
+            right: 0;
+            color: var(--white);
+            text-transform: uppercase;
+            aspect-ratio: 1/1;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            display: none;
+        }
+
+        div {
+            width: 40px;
+            height: 40px;
+            border: var(--border-width) solid var(--white);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 12px;
+
+                path {
+                    stroke: var(--white);
+                }
+            }
+        }
+    }
+
 }
