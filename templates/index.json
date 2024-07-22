@@ -174,7 +174,7 @@
         "image": "shopify:\/\/shop_images\/Frame.jpg",
         "image_height": 80,
         "side_padding": 12,
-        "bottom_margin": 30
+        "bottom_margin": 0
       }
     },
     "marquee_text_qE8hf6": {
@@ -182,7 +182,8 @@
       "settings": {
         "marquee_text": "Free Shipping on orders over $50",
         "marquee_separator": "&bull;",
-        "text_size": 80
+        "text_size": 80,
+        "bottom_margin": 60
       }
     }
   },
