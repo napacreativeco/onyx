@@ -220,6 +220,15 @@
         clickable: true
       }
     });
+
+    const productSwiper = new Swiper('.product-blocks-swiper', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
   </script>
 
   {{ 'shop.js'  | asset_url | script_tag }}
