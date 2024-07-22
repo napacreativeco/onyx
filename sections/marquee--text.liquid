@@ -1,0 +1,54 @@
+{{ 'component--marquee-text.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .marquee .content {
+        font-size: {{ section.settings.text_size }}px;
+    }
+</style>
+
+<div class="marquee">
+  <div class="track">
+    <div class="content">
+        &nbsp;{{ section.settings.marquee_text }} {{ section.settings.marquee_separator }} {{ section.settings.marquee_text }} {{ section.settings.marquee_separator }} {{ section.settings.marquee_text }} {{ section.settings.marquee_separator }} {{ section.settings.marquee_text }} {{ section.settings.marquee_separator }} {{ section.settings.marquee_text }} {{ section.settings.marquee_separator }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Marquee: Text",
+      "tag": "section",
+      "class": "marquee-text",
+      "settings": [
+        {
+            "type": "text",
+            "id": "marquee_text",
+            "label": "Text",
+            "default": "Free Shipping on orders over $50"
+        },
+        {
+            "type": "text",
+            "id": "marquee_separator",
+            "label": "Separator",
+            "default": "&bull;"
+        },
+        {
+            "type": "range",
+            "id": "text_size",
+            "label": "Text Size",
+            "min": 40,
+            "max": 140,
+            "step": 10,
+            "default": 80
+        }
+      ],
+      "presets": [
+        {
+          "name": "Marquee: Text"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

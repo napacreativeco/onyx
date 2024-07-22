@@ -26,7 +26,7 @@
     }
 
     .pinboard-image {
-        height: {{ section.settings.image_height }}vh;
+        height: 100%;
         width: 100%;
     }
 
@@ -56,8 +56,9 @@
 
 <div class="pinboard-row">
 
-    <div class="pinboard-image" style="background: url('{{ section.settings.image | image_url: width: 2200 }}'); background-size: cover; background-position: center center;">
-    </div>
+
+    <img class="pinboard-image" src="{{ section.settings.image | image_url: width: 2200 }}" alt="{{ section.settings.image.alt }}" />
+
 
     {% for block in section.blocks %}
         {% assign price = block.settings.pinned_product.price | money_without_trailing_zeros %}
