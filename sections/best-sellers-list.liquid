@@ -1,14 +1,25 @@
 {{ 'component--best-sellers-list.css' | asset_url | stylesheet_tag }}
 
+<style>
+    .best-sellers-row {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+    }
+</style>
+
 <div class="best-sellers-row">
-    <div class="title">
-        <h2>{{ section.settings.title }}</h2>
+    <div class="title section-title">
+        <h2 style="font-size: {{ section.settings.section_title_size }}px;">{{ section.settings.title }}</h2>
     </div>
 
     <ul class="list">
         {% for block in section.blocks %}
+            {% assign price = block.settings.product.price | money_without_trailing_zeros %}
+            {% assign price_min = block.settings.product.price_min | money_without_trailing_zeros %}
+            {% assign price_max = block.settings.product.price_max | money_without_trailing_zeros %}
+
             <li class="list-item">
-                <div class="index">{{ forloop.index }}</div>
+                <div class="index">0{{ forloop.index }}</div>
 
                 <div class="horizontal">
                     <div class="image">
@@ -16,8 +27,24 @@
                     </div>
 
                     <div class="title">
-                        {{ block.settings.product.title }}
+                        <h3 style="font-size: {{ block.settings.product_title_size }}px;">{{ block.settings.product.title }}</h3>
                     </div>
+
+                    <div class="price" style="font-size: {{ block.settings.product_price_size }}px;">
+                        {% if price_min < price_max %}
+                            {{ price_min }} - {{ price_max }}
+                        {% else %}
+                            {{ price }}
+                        {% endif %}
+                    </div>
+
+
+                    <div class="options">
+                        <div class="button">
+                            {{ 'Options' | escape }}
+                        </div>
+                    </div>
+          
                 </div>
 
             </li>
@@ -35,6 +62,33 @@
             "type": "text",
             "id": "title",
             "label": "Title"
+        },
+        {
+            "type": "range",
+            "id": "section_title_size",
+            "label": "Title Size",
+            "min": 24,
+            "max": 64,
+            "step": 1,
+            "default": 44
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
         }
       ],
       "blocks": [
@@ -50,21 +104,21 @@
                 },
                 {
                     "type": "range",
-                    "id": "side_padding",
-                    "label": "Side Padding",
-                    "min": 0,
-                    "max": 24,
+                    "id": "product_title_size",
+                    "label": "Product Title Size",
+                    "min": 24,
+                    "max": 64,
                     "step": 1,
-                    "default": 12
+                    "default": 44
                 },
                 {
                     "type": "range",
-                    "id": "bottom_margin",
-                    "label": "Space Below",
-                    "default": 60,
-                    "min": 0,
-                    "max": 100,
-                    "step": 1
+                    "id": "product_price_size",
+                    "label": "Product Price Size",
+                    "min": 14,
+                    "max": 34,
+                    "step": 1,
+                    "default": 24
                 }
             ]
         }

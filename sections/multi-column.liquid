@@ -1,0 +1,154 @@
+{{ 'component--multi-column.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+    {% assign block_count = forloop.length %}
+{% endfor %}
+<style>
+    .multi-column-row {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+        grid-template-columns: repeat({{ block_count }}, minmax(0, 1fr));
+    }
+</style>
+
+<div class="multi-column-row">
+    {% for block in section.blocks %}
+        <div class="column">
+            {% if block.settings.block_image != blank %}
+                <div class="image">
+                    <img width="100%" height="100%" src="{{ block.settings.block_image | image_url: width: 500  }}" alt="{{ block.settings.block_image.alt }}" />
+                </div>
+            {% endif %}
+            {% if block.settings.block_title != blank %}
+                <div class="title">
+                    <h3 style="font-size: {{ block.settings.block_title_size }}px;">{{ block.settings.block_title }}</h3>
+                </div>
+            {% endif %}
+            {% if block.settings.block_text != blank %}
+                <div class="text">
+                    <p style="font-size: {{ block.settings.block_text_size }}px;">{{ block.settings.block_text }}</p>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+      "name": "Multi-Column",
+      "tag": "section",
+      "class": "multi-column-section",
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Section Title"
+        },
+        {
+            "type": "range",
+            "id": "section_title_size",
+            "label": "Section Title Size",
+            "min": 24,
+            "max": 64,
+            "step": 1,
+            "default": 44
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "column",
+            "name": "Column",
+            "limit": 4,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_image",
+                    "label": "Image"
+                },
+                {
+                    "type": "range",
+                    "id": "block_image_size",
+                    "label": "Title Size",
+                    "min": 10,
+                    "max": 100,
+                    "step": 10,
+                    "default": 100
+                },
+                {
+                    "type": "text",
+                    "id": "block_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "range",
+                    "id": "block_title_size",
+                    "label": "Title Size",
+                    "min": 14,
+                    "max": 34,
+                    "step": 1,
+                    "default": 24
+                },
+                {
+                    "type": "textarea",
+                    "id": "block_text",
+                    "label": "Text"
+                },
+                {
+                    "type": "range",
+                    "id": "block_text_size",
+                    "label": "Text Size",
+                    "min": 14,
+                    "max": 34,
+                    "step": 1,
+                    "default": 24
+                },
+                {
+                    "type": "select",
+                    "id": "text_align",
+                    "label": "Text Alignment",
+                    "options": [
+                        {
+                            "value": "left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "right",
+                            "label": "Right"
+                        }
+                    ]
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Multi-Column"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

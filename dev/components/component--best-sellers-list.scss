@@ -1,14 +1,59 @@
 .best-sellers-row {
 
-    .list {
-        .index {
+    .section-title {
+        border-bottom: var(--border-width) solid var(--white);
+        padding: 0 0 16px 0;
+        display: block;
+    }
 
+    .list {
+
+        .list-item {
+            border-bottom: var(--border-width) solid var(--white);
+            padding: 4px 0 10px 0;
+        }
+
+        .index {
+            margin-bottom: 28px;
+            font-size: 24px;
         }
 
         .horizontal {
             display: grid;
-            grid-template-columns: 2fr 4fr 3fr 3fr;
+            grid-template-columns: 1fr 6fr 2fr 3fr;
+            grid-gap: 18px;
             align-items: flex-end;
+        }
+
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+
+        .title {
+            border-bottom: 0px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .price {
+            text-align: center;
+        }
+
+        .button {
+            color: var(--white);
+            border: var(--border-width) solid var(--white);
+            border-radius: 50px;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: var(--white);
+            color: var(--black);
         }
     }
 }

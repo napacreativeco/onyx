@@ -3,7 +3,6 @@
 <style>
     .product-blocks-slider-row {
         margin: 0 0 {{ section.settings.bottom_margin }}px 0;
-        padding: 0 {{ section.settings.side_padding }}px;
     }
 </style>
 
@@ -72,6 +71,15 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
         }
       ],
       "blocks": [
@@ -99,24 +107,6 @@
                     "max": 80,
                     "step": 1,
                     "default": 40
-                },
-                {
-                    "type": "range",
-                    "id": "side_padding",
-                    "label": "Side Padding",
-                    "min": 0,
-                    "max": 24,
-                    "step": 1,
-                    "default": 12
-                },
-                {
-                    "type": "range",
-                    "id": "bottom_margin",
-                    "label": "Space Below",
-                    "default": 60,
-                    "min": 0,
-                    "max": 100,
-                    "step": 1
                 }
             ]
         }
