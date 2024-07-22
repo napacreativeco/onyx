@@ -1,3 +1,100 @@
+{{ 'component--pinboard.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+    {% if forloop.index0 == 0 %}
+        {% assign one_x = block.settings.x_position %}
+        {% assign one_y = block.settings.y_position %}
+    {% endif %}
+    {% if forloop.index0 == 1 %}
+        {% assign two_x = block.settings.x_position %}
+        {% assign two_y = block.settings.y_position %}
+    {% endif %}
+    {% if forloop.index0 == 2 %}
+        {% assign three_x = block.settings.x_position %}
+        {% assign three_y = block.settings.y_position %}
+    {% endif %}
+    {% if forloop.index0 == 3 %}
+        {% assign four_x = block.settings.x_position %}
+        {% assign four_y = block.settings.y_position %}
+    {% endif %}
+{% endfor %}
+
+<style>
+    .pinboard {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+    }
+
+    .pinboard-row {
+        height: 100%;
+    }
+
+    .pinboard-image {
+        height: {{ section.settings.image_height }}vh;
+    }
+
+    .pinned-product[data-index="0"] {
+        left: {{ one_x }}%;
+        top: {{ one_y }}%;
+    }
+    .pinned-product[data-index="1"] {
+        left: {{ two_x }}%;
+        bottom: {{ two_y }}%;
+    }
+    .pinned-product[data-index="2"] {
+        left: {{ three_x }}%;
+        bottom: {{ three_y }}%;
+    }
+    .pinned-product[data-index="3"] {
+        left: {{ four_x }}%;
+        bottom: {{ four_y }}%;
+    }
+</style>
+
+<div class="pinboard-row">
+
+    <div class="pinboard-image">
+        <img src="{{ section.settings.image | image_url: width: 2200 }}" alt="{{ section.settings.image.alt }}" />
+    </div>
+
+    {% for block in section.blocks %}
+        {% assign price = block.settings.pinned_product.price | money_without_trailing_zeros %}
+        {% assign price_min = block.settings.pinned_product.price_min | money_without_trailing_zeros %}
+        {% assign price_max = block.settings.pinned_product.price_max | money_without_trailing_zeros %}
+        {% assign title = block.settings.pinned_product.title %}
+        {% assign url = block.settings.pinned_product.url %}
+
+        <div class="pinned-product" data-index="{{ forloop.index0 }}">
+            {% render 'icon--star' %}
+
+            <div class="product-info">
+                <h3><a href="{{ url }}">{{ title }}</a></h3>
+                {% if price_min < price_max %}
+                    <p>{{ price_min }} - {{ price_max }}</p>
+                {% else %}
+                    <p>{{ price }}</p>
+                {% endif %}
+            </div>
+
+        </div>
+        
+    {% endfor %}
+</div>
+
+<script>
+    jQuery('.pinned-product').on('mouseenter', function() {
+        jQuery(this).find('.product-info').css({
+            display: 'flex'
+        });
+    });
+
+    jQuery('.pinned-product').on('mouseleave', function() {
+        jQuery(this).find('.product-info').css({
+            display: 'none'
+        });
+    });
+</script>
+
 {% schema %}
     {
       "name": "Pinboard",
@@ -16,7 +113,7 @@
             "min": 30,
             "max": 100,
             "step": 10,
-            "default": 50
+            "default": 100
         },
         {
             "type": "range",
@@ -41,6 +138,7 @@
         {
             "type": "product",
             "name": "Product Pin",
+            "limit": 4,
             "settings": [
                 {
                     "type": "product",
