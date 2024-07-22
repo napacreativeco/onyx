@@ -7,30 +7,41 @@
     .multi-column-row {
         margin: 0 0 {{ section.settings.bottom_margin }}px 0;
         padding: 0 {{ section.settings.side_padding }}px;
+    }
+    .multi-column-row .columns {
         grid-template-columns: repeat({{ block_count }}, minmax(0, 1fr));
+        grid-gap: {{ section.settings.column_spacing }}px;
     }
 </style>
 
 <div class="multi-column-row">
-    {% for block in section.blocks %}
-        <div class="column">
-            {% if block.settings.block_image != blank %}
-                <div class="image">
-                    <img width="100%" height="100%" src="{{ block.settings.block_image | image_url: width: 500  }}" alt="{{ block.settings.block_image.alt }}" />
-                </div>
-            {% endif %}
-            {% if block.settings.block_title != blank %}
-                <div class="title">
-                    <h3 style="font-size: {{ block.settings.block_title_size }}px;">{{ block.settings.block_title }}</h3>
-                </div>
-            {% endif %}
-            {% if block.settings.block_text != blank %}
-                <div class="text">
-                    <p style="font-size: {{ block.settings.block_text_size }}px;">{{ block.settings.block_text }}</p>
-                </div>
-            {% endif %}
-        </div>
-    {% endfor %}
+
+    <div class="title" style="padding-bottom: {{ section.settings.title_spacing }}px;">
+        <h2 style="font-size: {{ section.settings.section_title_size }}px; text-align: {{ section.settings.title_text_align }};">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="columns">
+        {% for block in section.blocks %}
+            <div class="column">
+                {% if block.settings.block_image != blank %}
+                    <div class="image">
+                        <img width="100%" height="100%" src="{{ block.settings.block_image | image_url: width: 500  }}" alt="{{ block.settings.block_image.alt }}" />
+                    </div>
+                {% endif %}
+                {% if block.settings.block_title != blank %}
+                    <div class="title">
+                        <h3 style="font-size: {{ block.settings.block_title_size }}px;">{{ block.settings.block_title }}</h3>
+                    </div>
+                {% endif %}
+                {% if block.settings.block_text != blank %}
+                    <div class="text">
+                        <p style="font-size: {{ block.settings.block_text_size }}px;">{{ block.settings.block_text }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
 </div>
 
 {% schema %}
@@ -45,6 +56,26 @@
             "label": "Section Title"
         },
         {
+            "type": "select",
+            "id": "title_text_align",
+            "label": "Text Alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
+        },
+        {
             "type": "range",
             "id": "section_title_size",
             "label": "Section Title Size",
@@ -52,6 +83,24 @@
             "max": 64,
             "step": 1,
             "default": 44
+        },
+        {
+            "type": "range",
+            "id": "title_spacing",
+            "label": "Space Below Title",
+            "min": 20,
+            "max": 40,
+            "step": 1,
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "column_spacing",
+            "label": "Space Between Columns",
+            "min": 6,
+            "max": 20,
+            "step": 1,
+            "default": 10
         },
         {
             "type": "range",
@@ -115,15 +164,16 @@
                     "type": "range",
                     "id": "block_text_size",
                     "label": "Text Size",
-                    "min": 14,
-                    "max": 34,
+                    "min": 12,
+                    "max": 24,
                     "step": 1,
-                    "default": 24
+                    "default": 14
                 },
                 {
                     "type": "select",
                     "id": "text_align",
                     "label": "Text Alignment",
+                    "default": "center",
                     "options": [
                         {
                             "value": "left",
