@@ -255,7 +255,7 @@
             "block_title": "",
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
-            "block_text_size": 24,
+            "block_text_size": 14,
             "text_align": "left"
           }
         },
@@ -266,7 +266,7 @@
             "block_title": "",
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
-            "block_text_size": 24,
+            "block_text_size": 14,
             "text_align": "left"
           }
         },
@@ -277,7 +277,7 @@
             "block_title": "",
             "block_title_size": 24,
             "block_text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Proin eros velit, venenatis quis pulvinar vitae, hendrerit non tellus.",
-            "block_text_size": 24,
+            "block_text_size": 14,
             "text_align": "left"
           }
         }
@@ -289,7 +289,10 @@
       ],
       "settings": {
         "title": "Multi-Column Text Layout",
+        "title_text_align": "center",
         "section_title_size": 44,
+        "title_spacing": 20,
+        "column_spacing": 10,
         "side_padding": 12,
         "bottom_margin": 60
       }
