@@ -8,19 +8,31 @@
 </style>
 
 <div class="accordion-group-row">
-    <div class="top">
-        <div class="title">
-            <h2 style="font-size: {{ section.settings.section_title_size }}px;" class="section-title">{{ section.settings.title }}</h2>
-        </div>
+
+    <div class="title">
+        <h2 style="font-size: {{ section.settings.section_title_size }}px;" class="section-title">{{ section.settings.title }}</h2>
     </div>
 
     <div class="accordion-list">
         {% for block in section.blocks %}
             <details>
-                <summary>{{ block.settings.accordion_title }}</summary>
+
+                <summary>
+                    <div class="title">
+                        <h3 style="font-size: {{ section.settings.accordion_title_size }}px;">{{ block.settings.accordion_title }}</h3>
+                    </div>
+                    <div class="icon icon-closed">
+                        {% render 'icon--plus' %}
+                    </div>
+                    <div class="icon icon-opened">
+                        {% render 'icon--minus' %}
+                    </div>
+                </summary>
+
                 <div class="accordion-body">
                     {{ block.settings.accordion_body }}
                 </div>
+
             </details>
         {% endfor %}
     </div>
