@@ -1,0 +1,23 @@
+.product-highlight-slider-row {
+
+    .product-highlights.swiper {
+
+        .swiper-slide {
+            position: relative;
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            img {
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+    }
+
+}

@@ -229,6 +229,19 @@
         prevEl: '.swiper-button-prev',
       }
     });
+
+    const productSlider = new Swiper('.product-highlights', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
   </script>
 
   {{ 'shop.js'  | asset_url | script_tag }}

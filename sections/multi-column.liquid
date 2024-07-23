@@ -30,12 +30,12 @@
                 {% endif %}
                 {% if block.settings.block_title != blank %}
                     <div class="title">
-                        <h3 style="font-size: {{ block.settings.block_title_size }}px;">{{ block.settings.block_title }}</h3>
+                        <h3 style="font-size: {{ block.settings.block_title_size }}px; text-align: {{ block.settings.text_align }};">{{ block.settings.block_title }}</h3>
                     </div>
                 {% endif %}
                 {% if block.settings.block_text != blank %}
                     <div class="text">
-                        <p style="font-size: {{ block.settings.block_text_size }}px;">{{ block.settings.block_text }}</p>
+                        <p style="font-size: {{ block.settings.block_text_size }}px; text-align: {{ block.settings.text_align }};">{{ block.settings.block_text }}</p>
                     </div>
                 {% endif %}
             </div>
