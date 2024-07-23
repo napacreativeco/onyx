@@ -1,7 +1,112 @@
 <div class="footer-row">
-    {% if section.settings.copyright_selector == true %}
-        {{ 'Copyright &copy;' }} {{ "now" | date: "%Y" }}
-    {% endif %}
+
+    {% comment %} 
+    //==================
+    // LEFT
+    //==================
+    {% endcomment %}
+    <div class="left-logo">
+
+        <div class="branding">
+            <div class="logo">
+                <a href="{{ shop.url }}" title="{{ shop.name }}">
+                    <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
+                </a>
+            </div>
+            <div class="site-description">
+                <p>{{ section.settings.site_description }}</p>
+            </div>
+        </div>
+
+        <div class="menu-one">
+            {% for block in section.blocks %}
+                {% if forloop.index == 1 %}
+                    <div class="title">
+                        <h3>{{ block.settings.menu_title }}</h3>
+                    </div>
+                    <div class="menu">
+                        {% for link in block.settings.menu.links %}
+                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="menu-two">
+            {% for block in section.blocks %}
+                {% if forloop.index == 1 %}
+                    <div class="title">
+                        <h3>{{ block.settings.menu_title }}</h3>
+                    </div>
+                    <div class="menu">
+                        {% for link in block.settings.menu.links %}
+                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {% comment %} 
+    //==================
+    // CENTER
+    //==================
+    {% endcomment %}
+    <div class="center-logo">
+
+        <div class="menu-one">
+            {% for block in section.blocks %}
+                {% if forloop.index == 1 %}
+                    <div class="title">
+                        <h3>{{ block.settings.menu_title }}</h3>
+                    </div>
+                    <div class="menu">
+                        {% for link in block.settings.menu.links %}
+                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="branding">
+            <div class="logo">
+                <a href="{{ shop.url }}" title="{{ shop.name }}">
+                    <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
+                </a>
+            </div>
+            <div class="site-description">
+                <p>{{ section.settings.site_description }}</p>
+            </div>
+        </div>
+
+        <div class="menu-two">
+            {% for block in section.blocks %}
+                {% if forloop.index == 1 %}
+                    <div class="title">
+                        <h3>{{ block.settings.menu_title }}</h3>
+                    </div>
+                    <div class="menu">
+                        {% for link in block.settings.menu.links %}
+                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="attribution">
+        {{ section.settings.attribution }}
+        {% if section.settings.copyright_selector == true %}
+            {{ shop.name }} {{ 'Copyright &copy;' }} {{ "now" | date: "%Y" }}
+        {% endif %}
+    </div>
+
 </div>
 
 {% schema %}
@@ -38,13 +143,33 @@
         },
         {
           "type": "text",
-          "id": "title",
+          "id": "attribution",
           "label": "Attribution"
+        },
+        {
+            "type": "select",
+            "id": "attribution_align",
+            "label": "Attribution Alignment",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ]
         },
         {
             "type": "checkbox",
             "id": "copyright_selector",
-            "label": "Show Copyright"
+            "label": "Show Copyright",
+            "default": true
         },
         {
             "type": "range",
@@ -71,6 +196,11 @@
             "name": "Menu",
             "limit": 2,
             "settings": [
+                {
+                    "type": "text",
+                    "id": "menu_title",
+                    "label": "Menu Title"
+                },
                 {
                     "type": "link_list",
                     "id": "menu",

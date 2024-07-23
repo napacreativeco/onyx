@@ -1,3 +1,17 @@
 footer {
     border-top: var(--border-width) solid var(--white);
+    padding-top: 40px;
+
+    .center-logo,
+    .left-logo {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-gap: 10px;
+        align-items: flex-start;
+    }
+
+    .attribution {
+        display: flex;
+        flex-direction: row;
+    }
 }
