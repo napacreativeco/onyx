@@ -472,6 +472,45 @@
       ],
       "settings": {
         "heading": "Testimonials",
+        "section_title_size": 46,
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "accordions_6QJqWt": {
+      "type": "accordions",
+      "blocks": {
+        "accordion_gECXi6": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion Title 1",
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+          }
+        },
+        "accordion_L73GQL": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion Title 2",
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+          }
+        },
+        "accordion_Q4MPkr": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion Title 2",
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_gECXi6",
+        "accordion_L73GQL",
+        "accordion_Q4MPkr"
+      ],
+      "settings": {
+        "title": "",
+        "section_title_size": 44,
+        "accordion_title_size": 34,
         "side_padding": 12,
         "bottom_margin": 60
       }
@@ -491,6 +530,7 @@
     "product_highlight_slider_aj4Che",
     "tab_cloud_qb8Hxt",
     "marquee_logo_pWa8qq",
-    "testimonials_slider_xb7Dmj"
+    "testimonials_slider_xb7Dmj",
+    "accordions_6QJqWt"
   ]
 }
