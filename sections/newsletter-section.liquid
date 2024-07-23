@@ -1,0 +1,90 @@
+{{ 'component--newsletter-signup.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .newsletter-signup-row {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+        padding: 0 {{ section.settings.side_padding }}px;
+    }
+</style>
+
+<div class="newsletter-signup-row">
+    <div class="left">
+        <h2 class="title">{{ section.settings.title }}</h2>
+        <p class="description">{{ section.settings.description }}</p>
+    </div>
+    <div class="right">
+        {% form 'customer' %}
+            <input type="email" />
+            <input type="submit" value="{{ section.settings.submit_text }}">
+        {% endform %}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Newsletter Signup",
+      "tag": "section",
+      "class": "newsletter-signup",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Sign up to our Newsletter"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "submit_text",
+          "label": "Subscribe Text",
+          "info": "The submit button text"
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "embed",
+            "name": "Embed Code",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "embed_coded",
+                    "label": "Embed Code",
+                    "info": "Paste an embed code here"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Newsletter Signup"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
