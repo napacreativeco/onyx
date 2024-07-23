@@ -514,6 +514,16 @@
         "side_padding": 12,
         "bottom_margin": 60
       }
+    },
+    "newsletter_section_ULrn8q": {
+      "type": "newsletter-section",
+      "settings": {
+        "title": "Sign up to our Newsletter",
+        "description": "Suspendisse porttitor ullamcorper sapien, sed euismod metus.",
+        "submit_text": "Subscribe",
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
     }
   },
   "order": [
@@ -531,6 +541,7 @@
     "tab_cloud_qb8Hxt",
     "marquee_logo_pWa8qq",
     "testimonials_slider_xb7Dmj",
-    "accordions_6QJqWt"
+    "accordions_6QJqWt",
+    "newsletter_section_ULrn8q"
   ]
 }
