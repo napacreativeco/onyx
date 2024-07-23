@@ -1,0 +1,107 @@
+{{ 'component--marquee-logo.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .logo-marquee {
+        margin: 0 0 {{ section.settings.bottom_margin }}px 0;
+    }
+
+    .marquee .content {
+        font-size: {{ section.settings.text_size }}px;
+    }
+</style>
+
+<div class="marquee">
+  <div class="track">
+    <div class="content">
+      &nbsp;
+  
+      {% for i in (1..12) %}
+
+        {% for block in section.blocks %}
+          {% if block.type == 'logo' %}
+            <a href="{{ block.settings.logo_url }}" title="{{ block.settings.logo.alt }}">
+              <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo.alt }}" />
+            </a>
+          {% endif %}
+          {% if block.type == 'text' %}
+            <a href="{{ block.settings.text_url }}" title="{{ block.settings.text }}">
+              {{ block.settings.text }}
+            </a>
+          {% endif %}
+
+        {% endfor %}
+        
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Logo Marquee",
+      "tag": "section",
+      "class": "logo-marquee",
+      "settings": [
+        {
+            "type": "range",
+            "id": "text_size",
+            "label": "Text Size",
+            "min": 14,
+            "max": 34,
+            "step": 1,
+            "default": 24
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "logo",
+            "name": "Logo",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Logo"
+                },
+                {
+                    "type": "url",
+                    "id": "logo_url",
+                    "label": "Destination"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "name": "Text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "text_url",
+                    "label": "Destination"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Logo Marquee"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
