@@ -403,6 +403,33 @@
         "side_padding": 12,
         "bottom_margin": 60
       }
+    },
+    "marquee_logo_pWa8qq": {
+      "type": "marquee--logo",
+      "blocks": {
+        "logo_RNHghG": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/logo-placeholder-300x120.png",
+            "logo_url": ""
+          }
+        },
+        "text_eWbrwR": {
+          "type": "text",
+          "settings": {
+            "text": "Test Company",
+            "text_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_RNHghG",
+        "text_eWbrwR"
+      ],
+      "settings": {
+        "text_size": 24,
+        "bottom_margin": 60
+      }
     }
   },
   "order": [
@@ -417,6 +444,7 @@
     "best_sellers_list_MYBGGi",
     "multi_column_BT7mC9",
     "product_highlight_slider_aj4Che",
-    "tab_cloud_qb8Hxt"
+    "tab_cloud_qb8Hxt",
+    "marquee_logo_pWa8qq"
   ]
 }
