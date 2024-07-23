@@ -304,10 +304,12 @@
           "type": "text",
           "settings": {
             "image": "shopify:\/\/shop_images\/61.jpg",
+            "color": "#484848",
             "slide_subtitle": "Product Subtitle",
             "slide_title": "Check out this new product",
             "slide_text": "from our brand new collection",
-            "destination": "shopify:\/\/collections\/frontpage"
+            "destination": "shopify:\/\/collections\/frontpage",
+            "image_opacity": 0.8
           }
         },
         "collection_GyKRth": {
@@ -316,7 +318,8 @@
             "slide_collection": "facial",
             "slide_subtitle": "Brand New",
             "slide_title": "New facials products available now",
-            "slide_text": "Take your facial skincare routine to the next level with these products"
+            "slide_text": "Take your facial skincare routine to the next level with these products",
+            "image_opacity": 0.8
           }
         },
         "product_A88anY": {
@@ -325,7 +328,8 @@
             "slide_product": "test-product",
             "slide_subtitle": "Customer Favorite",
             "slide_title": "Our best facial cleaner yet",
-            "slide_text": "try this product that all of our customers have been loving"
+            "slide_text": "try this product that all of our customers have been loving",
+            "image_opacity": 0.8
           }
         }
       },
@@ -335,6 +339,67 @@
         "product_A88anY"
       ],
       "settings": {
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
+    },
+    "tab_cloud_qb8Hxt": {
+      "type": "tab-cloud",
+      "blocks": {
+        "tab_G7hiXd": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        },
+        "tab_6erKPN": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        },
+        "tab_cnpCNx": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        },
+        "tab_CgmyaG": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        },
+        "tab_j4MwMP": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        },
+        "tab_PzpLaD": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "Featured Tab",
+            "tab_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_G7hiXd",
+        "tab_6erKPN",
+        "tab_cnpCNx",
+        "tab_CgmyaG",
+        "tab_j4MwMP",
+        "tab_PzpLaD"
+      ],
+      "settings": {
+        "heading": "",
+        "tab_text_size": 16,
         "side_padding": 12,
         "bottom_margin": 60
       }
@@ -351,6 +416,7 @@
     "product_blocks_slider_iX9gRg",
     "best_sellers_list_MYBGGi",
     "multi_column_BT7mC9",
-    "product_highlight_slider_aj4Che"
+    "product_highlight_slider_aj4Che",
+    "tab_cloud_qb8Hxt"
   ]
 }
