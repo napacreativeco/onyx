@@ -17,7 +17,21 @@
     .content {
         font-family: var(--header-font);
         line-height: 1;
-        padding: 4px 0 12px 0;
+        padding: 10px 0 12px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 24px;
+
+        img {
+            width: auto;
+        }
+
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+        }
     }
 
     @keyframes marquee {

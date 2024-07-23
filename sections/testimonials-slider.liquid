@@ -1,0 +1,94 @@
+{{ 'component--testimonial-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="testimonials-row">
+
+    <div class="top">
+        <div class="title">
+            <h2>{{ section.settings.heading }}</h2>
+        </div>
+        <div class="controls">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+
+    <div class="testimonial-swiper swiper">
+        
+        <div class="swiper-wrapper">
+            
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="text">
+                            {{ block.settings.text }}
+                        </div>
+                        <div class="author">
+                            {{ block.settings.author }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Testimonials",
+      "tag": "section",
+      "class": "testimonials",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "testimonial",
+            "name": "Testimonial",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "author",
+                    "label": "Author"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Testimonials"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}

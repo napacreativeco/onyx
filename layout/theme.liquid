@@ -242,6 +242,16 @@
         clickable: true
       }
     });
+
+    const testimonialSlider = new Swiper('.testimonial-slider', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 3
+    });
   </script>
 
   {{ 'shop.js'  | asset_url | script_tag }}
