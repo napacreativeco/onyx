@@ -11,100 +11,104 @@
     // LEFT
     //==================
     {% endcomment %}
-    <div class="left-logo">
+    {% if section.settings.footer_selection == 'left_logo' %}
+        <div class="left-logo">
 
-        <div class="branding">
-            <div class="logo">
-                <a href="{{ shop.url }}" title="{{ shop.name }}">
-                    <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
-                </a>
+            <div class="branding">
+                <div class="logo">
+                    <a href="{{ shop.url }}" title="{{ shop.name }}">
+                        <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
+                    </a>
+                </div>
+                <div class="site-description">
+                    <p>{{ section.settings.site_description }}</p>
+                </div>
             </div>
-            <div class="site-description">
-                <p>{{ section.settings.site_description }}</p>
+
+            <div class="menu-one">
+                {% for block in section.blocks %}
+                    {% if forloop.index == 1 %}
+                        <div class="title">
+                            <h3>{{ block.settings.menu_title }}</h3>
+                        </div>
+                        <div class="menu">
+                            {% for link in block.settings.menu.links %}
+                                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
-        </div>
 
-        <div class="menu-one">
-            {% for block in section.blocks %}
-                {% if forloop.index == 1 %}
-                    <div class="title">
-                        <h3>{{ block.settings.menu_title }}</h3>
-                    </div>
-                    <div class="menu">
-                        {% for link in block.settings.menu.links %}
-                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="menu-two">
+                {% for block in section.blocks %}
+                    {% if forloop.index == 1 %}
+                        <div class="title">
+                            <h3>{{ block.settings.menu_title }}</h3>
+                        </div>
+                        <div class="menu">
+                            {% for link in block.settings.menu.links %}
+                                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-        <div class="menu-two">
-            {% for block in section.blocks %}
-                {% if forloop.index == 1 %}
-                    <div class="title">
-                        <h3>{{ block.settings.menu_title }}</h3>
-                    </div>
-                    <div class="menu">
-                        {% for link in block.settings.menu.links %}
-                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endfor %}
         </div>
-
-    </div>
+    {% endif %}
 
     {% comment %} 
     //==================
     // CENTER
     //==================
     {% endcomment %}
-    <div class="center-logo">
+    {% if section.settings.footer_selection == 'center_logo' %}
+        <div class="center-logo">
 
-        <div class="menu-one">
-            {% for block in section.blocks %}
-                {% if forloop.index == 1 %}
-                    <div class="title">
-                        <h3>{{ block.settings.menu_title }}</h3>
-                    </div>
-                    <div class="menu">
-                        {% for link in block.settings.menu.links %}
-                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-
-        <div class="branding">
-            <div class="logo">
-                <a href="{{ shop.url }}" title="{{ shop.name }}">
-                    <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
-                </a>
+            <div class="menu-one">
+                {% for block in section.blocks %}
+                    {% if forloop.index == 1 %}
+                        <div class="title">
+                            <h3>{{ block.settings.menu_title }}</h3>
+                        </div>
+                        <div class="menu">
+                            {% for link in block.settings.menu.links %}
+                                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
-            <div class="site-description">
-                <p>{{ section.settings.site_description }}</p>
+
+            <div class="branding">
+                <div class="logo">
+                    <a href="{{ shop.url }}" title="{{ shop.name }}">
+                        <img src="{{ section.settings.site_logo | image_url: width: 600 }}" alt="{{ section.settings.site_logo.alt }}" />
+                    </a>
+                </div>
+                <div class="site-description">
+                    <p>{{ section.settings.site_description }}</p>
+                </div>
             </div>
-        </div>
 
-        <div class="menu-two">
-            {% for block in section.blocks %}
-                {% if forloop.index == 1 %}
-                    <div class="title">
-                        <h3>{{ block.settings.menu_title }}</h3>
-                    </div>
-                    <div class="menu">
-                        {% for link in block.settings.menu.links %}
-                            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="menu-two">
+                {% for block in section.blocks %}
+                    {% if forloop.index == 1 %}
+                        <div class="title">
+                            <h3>{{ block.settings.menu_title }}</h3>
+                        </div>
+                        <div class="menu">
+                            {% for link in block.settings.menu.links %}
+                                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-    </div>
+        </div>
+    {% endif %}
 
     <div class="attribution">
         {{ section.settings.attribution }}
