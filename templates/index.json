@@ -296,6 +296,38 @@
         "side_padding": 12,
         "bottom_margin": 60
       }
+    },
+    "product_highlight_slider_aj4Che": {
+      "type": "product-highlight-slider",
+      "blocks": {
+        "text_Crz37N": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/61.jpg",
+            "slide_subtitle": "Product Subtitle",
+            "slide_title": "Check out this new product",
+            "slide_text": "from our brand new collection",
+            "destination": "shopify:\/\/collections\/frontpage"
+          }
+        },
+        "collection_GyKRth": {
+          "type": "collection",
+          "settings": {
+            "slide_collection": "facial",
+            "slide_subtitle": "Brand New",
+            "slide_title": "New facials products available now",
+            "slide_text": "Take your facial skincare routine to the next level with these products"
+          }
+        }
+      },
+      "block_order": [
+        "text_Crz37N",
+        "collection_GyKRth"
+      ],
+      "settings": {
+        "side_padding": 12,
+        "bottom_margin": 60
+      }
     }
   },
   "order": [
@@ -308,6 +340,7 @@
     "marquee_text_qE8hf6",
     "product_blocks_slider_iX9gRg",
     "best_sellers_list_MYBGGi",
-    "multi_column_BT7mC9"
+    "multi_column_BT7mC9",
+    "product_highlight_slider_aj4Che"
   ]
 }
