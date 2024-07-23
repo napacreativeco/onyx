@@ -1,1 +1,1 @@
-.testimonial-row .top{display:flex;flex-direction:flex;align-items:flex-end;justify-content:space-between}
+.testimonials-row .top{display:flex;flex-direction:flex;align-items:flex-end;justify-content:space-between}.testimonials-row .testimonial{display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding:10px;border:var(--border-width) solid var(--white);border-collapse:collapse;height:auto}
