@@ -318,11 +318,21 @@
             "slide_title": "New facials products available now",
             "slide_text": "Take your facial skincare routine to the next level with these products"
           }
+        },
+        "product_A88anY": {
+          "type": "product",
+          "settings": {
+            "slide_product": "test-product",
+            "slide_subtitle": "Customer Favorite",
+            "slide_title": "Our best facial cleaner yet",
+            "slide_text": "try this product that all of our customers have been loving"
+          }
         }
       },
       "block_order": [
         "text_Crz37N",
-        "collection_GyKRth"
+        "collection_GyKRth",
+        "product_A88anY"
       ],
       "settings": {
         "side_padding": 12,
