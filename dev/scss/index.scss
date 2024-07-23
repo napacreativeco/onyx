@@ -161,5 +161,40 @@ nav[role="navigation"] {
 }
 
 
+/* Swiper Buttons: Global */
+.swiper-button-prev,
+.swiper-button-next {
+	position: relative;
+	transform: none;
+	line-height: 1;
+	top: auto;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	color: var(--white);
+	text-transform: uppercase;
+	margin-top: 0;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+	display: none;
+}
+
+/* Swiper Bullets: Global */
+.swiper-pagination-bullet {
+	margin: 0 !important;
+	padding: 0;
+	border: var(--border-width) solid var(--white);
+	opacity: 1;
+	background: transparent;
+	width: 12px;
+	height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+	opacity: 1;
+	background: var(--white);
+}
 
 @import './color-mode.scss';

@@ -56,9 +56,7 @@
 
 <div class="pinboard-row">
 
-
     <img class="pinboard-image" src="{{ section.settings.image | image_url: width: 2200 }}" alt="{{ section.settings.image.alt }}" />
-
 
     {% for block in section.blocks %}
         {% assign price = block.settings.pinned_product.price | money_without_trailing_zeros %}

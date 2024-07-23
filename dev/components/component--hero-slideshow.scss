@@ -63,22 +63,6 @@
         }
     }
 
-    /* Bullets: Global */
-    .swiper-pagination-bullet {
-        margin: 0 !important;
-        padding: 0;
-        border: var(--border-width) solid var(--white);
-        opacity: 1;
-        background: transparent;
-        width: 12px;
-        height: 12px;
-    }
-
-    .swiper-pagination-bullet-active {
-        opacity: 1;
-        background: var(--white);
-    }
-
     .swiper-pagination {
         position: relative;
         bottom: auto;
@@ -87,23 +71,6 @@
         flex-direction: row;
         align-items: flex-start;
         gap: 6px;
-    }
-
-    /* Buttons: Global */
-    .swiper-button-prev,
-    .swiper-button-next {
-        position: relative;
-        transform: none;
-        line-height: 1;
-        left: 0;
-        right: 0;
-        color: var(--white);
-        text-transform: uppercase;
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        display: none;
     }
 
     /* Navigation: Overlay */
