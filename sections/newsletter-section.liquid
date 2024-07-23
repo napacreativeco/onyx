@@ -5,16 +5,24 @@
         margin: 0 0 {{ section.settings.bottom_margin }}px 0;
         padding: 0 {{ section.settings.side_padding }}px;
     }
+
+    .newsletter-signup-row input[type="email"] {
+        font-size: {{ section.settings.email_placeholder_size }}px;
+    }
+
+    .newsletter-signup-row input[type="submit"] {
+        font-size: {{ section.settings.email_placeholder_size }}px;
+    }
 </style>
 
 <div class="newsletter-signup-row">
     <div class="left">
-        <h2 class="title">{{ section.settings.title }}</h2>
+        <h2 class="title" style="font-size: {{ section.settings.section_title_size }}px;">{{ section.settings.title }}</h2>
         <p class="description">{{ section.settings.description }}</p>
     </div>
     <div class="right">
         {% form 'customer' %}
-            <input type="email" />
+            <input type="email" placeholder="{{ section.settings.email_placeholder }}" />
             <input type="submit" value="{{ section.settings.submit_text }}">
         {% endform %}
     </div>
@@ -34,15 +42,41 @@
           "default": "Sign up to our Newsletter"
         },
         {
+            "type": "range",
+            "id": "section_title_size",
+            "label": "Section Title Size",
+            "min": 24,
+            "max": 64,
+            "step": 1,
+            "default": 44
+        },
+        {
           "type": "textarea",
           "id": "description",
           "label": "Description"
         },
         {
           "type": "text",
+          "id": "email_placeholder",
+          "label": "Email Placeholder",
+          "info": "The placeholder text in the email field",
+          "default": "hello@email.com"
+        },
+        {
+            "type": "range",
+            "id": "email_placeholder_size",
+            "label": "Email Size",
+            "min": 18,
+            "max": 44,
+            "step": 1,
+            "default": 34
+        },
+        {
+          "type": "text",
           "id": "submit_text",
           "label": "Subscribe Text",
-          "info": "The submit button text"
+          "info": "The submit button text",
+          "default": "Subscribe"
         },
         {
             "type": "range",

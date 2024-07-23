@@ -1,0 +1,46 @@
+<footer>
+    <p>Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
+</footer>
+
+{% schema %}
+    {
+      "name": "Footer",
+      "tag": "section",
+      "class": "footer-section",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Page Content"
+        },
+        {
+            "type": "range",
+            "id": "side_padding",
+            "label": "Side Padding",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "bottom_margin",
+            "label": "Space Below",
+            "default": 60,
+            "min": 0,
+            "max": 100,
+            "step": 1
+        }
+      ],
+      "presets": [
+        {
+          "name": "Footer"
+        }
+      ],
+      "enabled_on": {
+        "templates": ["*"]
+      }
+    }
+{% endschema %}
+    
