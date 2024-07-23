@@ -1,18 +1,50 @@
-<footer>
-    <p>Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.</p>
-</footer>
+<div class="footer-row">
+    {% if section.settings.copyright_selector == true %}
+        {{ 'Copyright &copy;' }} {{ "now" | date: "%Y" }}
+    {% endif %}
+</div>
 
 {% schema %}
     {
       "name": "Footer",
-      "tag": "section",
+      "tag": "footer",
       "class": "footer-section",
       "limit": 1,
       "settings": [
         {
+            "type": "select",
+            "id": "footer_selection",
+            "label": "Footer Layout",
+            "options": [
+                {
+                    "value": "left_logo",
+                    "label": "Left Logo"
+                },
+                {
+                    "value": "center_logo",
+                    "label": "Center Logo"
+                }
+            ]
+        },
+        {
+            "type": "image_picker",
+            "id": "site_logo",
+            "label": "Logo"
+        },
+        {
+          "type": "textarea",
+          "id": "site_description",
+          "label": "Site Description"
+        },
+        {
           "type": "text",
           "id": "title",
-          "label": "Page Content"
+          "label": "Attribution"
+        },
+        {
+            "type": "checkbox",
+            "id": "copyright_selector",
+            "label": "Show Copyright"
         },
         {
             "type": "range",
@@ -31,6 +63,20 @@
             "min": 0,
             "max": 100,
             "step": 1
+        }
+      ],
+      "blocks": [
+        {
+            "type": "menu",
+            "name": "Menu",
+            "limit": 2,
+            "settings": [
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "label": "Menu"
+                }
+            ]
         }
       ],
       "presets": [
