@@ -5,17 +5,21 @@
         margin: 0 0 {{ section.settings.bottom_margin }}px 0;
         padding: 0 {{ section.settings.side_padding }}px;
     }
+
+    h2.testimonial-title {
+        font-size: {{ section.settings.section_title_size }}px;
+    }
 </style>
 
 <div class="testimonials-row">
 
     <div class="top">
         <div class="title">
-            <h2>{{ section.settings.heading }}</h2>
+            <h2 class="testimonial-title">{{ section.settings.heading }}</h2>
         </div>
-        <div class="controls">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        <div class="slide-controls">
+            <div class="slide-control swiper-button-prev">{% render 'icon--arrow-left' %}</div>
+            <div class="slide-control swiper-button-next">{% render 'icon--arrow-right' %}</div>
         </div>
     </div>
 
@@ -50,6 +54,15 @@
           "id": "heading",
           "label": "Heading",
           "default": "Testimonials"
+        },
+        {
+            "type": "range",
+            "id": "section_title_size",
+            "label": "Title Size",
+            "min": 20,
+            "max": 64,
+            "step": 1,
+            "default": 46
         },
         {
             "type": "range",

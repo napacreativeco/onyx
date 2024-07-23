@@ -5,6 +5,37 @@
         flex-direction: flex;
         align-items: flex-end;
         justify-content: space-between;
+        padding: 0 0 20px 0; 
+
+        .title {
+    
+        }
+
+        .slide-controls {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+
+            .slide-control {
+                width: 40px;
+                height: 40px;
+                border: var(--border-width) solid var(--white);
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            svg {
+                width: 12px;
+
+                path {
+                    stroke: var(--white);
+                }
+            }
+        }
+
     }
 
     .testimonial {
@@ -16,10 +47,6 @@
         border: var(--border-width) solid var(--white);
         border-collapse: collapse;  
         height: auto;
-
-        .text {
-            
-        }
     }
 
 }
