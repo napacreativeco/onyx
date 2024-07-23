@@ -427,7 +427,52 @@
         "text_eWbrwR"
       ],
       "settings": {
+        "logo_height": 50,
         "text_size": 24,
+        "bottom_margin": 60
+      }
+    },
+    "testimonials_slider_xb7Dmj": {
+      "type": "testimonials-slider",
+      "blocks": {
+        "testimonial_Vwmm7E": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus.",
+            "author": "Author Name"
+          }
+        },
+        "testimonial_8QBDgT": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper.",
+            "author": "Author Name"
+          }
+        },
+        "testimonial_YdpqC8": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus.",
+            "author": "Author Name"
+          }
+        },
+        "testimonial_z7XegV": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus.",
+            "author": "Author Name"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Vwmm7E",
+        "testimonial_8QBDgT",
+        "testimonial_YdpqC8",
+        "testimonial_z7XegV"
+      ],
+      "settings": {
+        "heading": "",
+        "side_padding": 12,
         "bottom_margin": 60
       }
     }
@@ -445,6 +490,7 @@
     "multi_column_BT7mC9",
     "product_highlight_slider_aj4Che",
     "tab_cloud_qb8Hxt",
-    "marquee_logo_pWa8qq"
+    "marquee_logo_pWa8qq",
+    "testimonials_slider_xb7Dmj"
   ]
 }
