@@ -29,6 +29,38 @@
           "vertical_padding": 4,
           "horizontal_padding": 4
         }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "menu_3jhAwX": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Menu 1",
+              "menu": "footer-one"
+            }
+          },
+          "menu_JteW6j": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Menu 2",
+              "menu": "footer-two"
+            }
+          }
+        },
+        "block_order": [
+          "menu_3jhAwX",
+          "menu_JteW6j"
+        ],
+        "settings": {
+          "footer_selection": "left_logo",
+          "site_description": "",
+          "attribution": "",
+          "attribution_align": "flex-start",
+          "copyright_selector": true,
+          "side_padding": 12,
+          "bottom_margin": 60
+        }
       }
     },
     "content_for_index": [
