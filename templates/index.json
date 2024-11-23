@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div.homepage",
   "sections": {
@@ -32,7 +32,7 @@
         "banner_xD6XAb": {
           "type": "banner",
           "settings": {
-            "banner_image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg",
+            "banner_image": "shopify://shop_images/model-in-neutral-colors-by-window.jpg",
             "destination": ""
           }
         }
@@ -42,10 +42,10 @@
         "banner_xD6XAb"
       ],
       "settings": {
-        "hero_mode": "slideshow_mode",
-        "hero_nav_mode": "below_navigation",
+        "hero_mode": "single_banner",
+        "hero_nav_mode": "overlay_navigation",
         "hero_image_tint": 0.8,
-        "hero_margin_bottom": 60
+        "hero_margin_bottom": 64
       }
     },
     "latest_products_C6RPiq": {
@@ -95,19 +95,19 @@
         "image_9VAWgn": {
           "type": "image",
           "settings": {
-            "highlight_text_image": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg"
+            "highlight_text_image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg"
           }
         },
         "image_aUWjUk": {
           "type": "image",
           "settings": {
-            "highlight_text_image": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg"
+            "highlight_text_image": "shopify://shop_images/model-in-neutral-colors-by-window.jpg"
           }
         },
         "image_AmG4BG": {
           "type": "image",
           "settings": {
-            "highlight_text_image": "shopify:\/\/shop_images\/Screenshot2023-08-10at5.01.24PM.png"
+            "highlight_text_image": "shopify://shop_images/Screenshot2023-08-10at5.01.24PM.png"
           }
         }
       },
@@ -171,7 +171,7 @@
         "product_Aidztt"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Frame.jpg",
+        "image": "shopify://shop_images/Frame.jpg",
         "image_height": 80,
         "side_padding": 12,
         "bottom_margin": 0
@@ -303,12 +303,12 @@
         "text_Crz37N": {
           "type": "text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/61.jpg",
+            "image": "shopify://shop_images/61.jpg",
             "color": "#484848",
             "slide_subtitle": "Product Subtitle",
             "slide_title": "Check out this new product",
             "slide_text": "from our brand new collection",
-            "destination": "shopify:\/\/collections\/frontpage",
+            "destination": "shopify://collections/frontpage",
             "image_opacity": 0.8
           }
         },
@@ -410,7 +410,7 @@
         "logo_RNHghG": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/logo-placeholder-300x120.png",
+            "logo": "shopify://shop_images/logo-placeholder-300x120.png",
             "logo_url": ""
           }
         },
@@ -484,21 +484,21 @@
           "type": "accordion",
           "settings": {
             "accordion_title": "Accordion Title 1",
-            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.</p>"
           }
         },
         "accordion_L73GQL": {
           "type": "accordion",
           "settings": {
             "accordion_title": "Accordion Title 2",
-            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.</p>"
           }
         },
         "accordion_Q4MPkr": {
           "type": "accordion",
           "settings": {
             "accordion_title": "Accordion Title 2",
-            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.<\/p>"
+            "accordion_body": "<p>Suspendisse porttitor ullamcorper sapien, sed euismod metus. consequat nisi nec rhoncus ullamcorper. Morbi consequat nisi nec rhoncus ullamcorper. Suspendisse porttitor ullamcorper sapien, sed euismod metus. Morbi consequat nisi nec Morbi consequat nisi nec rhoncus ullamcorper.</p>"
           }
         }
       },
@@ -519,7 +519,10 @@
       "type": "newsletter-section",
       "settings": {
         "title": "Sign up to our Newsletter",
+        "section_title_size": 44,
         "description": "Suspendisse porttitor ullamcorper sapien, sed euismod metus.",
+        "email_placeholder": "hello@email.com",
+        "email_placeholder_size": 34,
         "submit_text": "Subscribe",
         "side_padding": 12,
         "bottom_margin": 60
