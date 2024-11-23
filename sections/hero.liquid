@@ -112,13 +112,36 @@
     </div>
 
   {% when 'single_banner' %}
+
+    <style>
+      .slide-text h3.subtitle {
+        font-size: {{ block.settings.banner_subtitle_size }}px;
+        line-height: {{ block.settings.banner_subtitle_lineheight }};
+      }
+      .slide-text h2.title {
+        font-size: {{ block.settings.banner_title_size }}px;
+        line-height: {{ block.settings.banner_title_lineheight }};
+      }
+
+      @media screen and (max-width: 767px) {
+        .slide-text h3.subtitle {
+          font-size: {{ block.settings.banner_subtitle_size_mobile }}px;
+          line-height: {{ block.settings.banner_subtitle_lineheight_mobile }};
+        }
+        .slide-text h2.title {
+          font-size: {{ block.settings.banner_title_size_mobile }}px;
+          line-height: {{ block.settings.banner_title_lineheight_mobile }};
+        }
+      }
+    </style>
+
     <div class="hero-banner">
       {% for block in section.blocks %}
         <img src="{{ block.settings.banner_image | image_url: width: 2200 }}" alt="{{ block.settings.banner_image.alt }}" />
 
         <div class="banner-text">
-          <h3 class="subtitle">{{ block.settings.subtitle }}</h3>
-          <h2 class="title">{{ block.settings.title }}</h2>
+          <h3 class="subtitle">{{ block.settings.banner_subtitle }}</h3>
+          <h2 class="title">{{ block.settings.banner_title }}</h2>
         </div>
 
       {% endfor %}
