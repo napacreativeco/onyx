@@ -33,6 +33,16 @@
           "type": "banner",
           "settings": {
             "banner_image": "shopify://shop_images/model-in-neutral-colors-by-window.jpg",
+            "subtitle": "THRONE DEVELOPMENT STUDIO",
+            "subtitle_size": 18,
+            "subtitle_size_mobile": 14,
+            "subtitle_lineheight": 0.9,
+            "subtitle_lineheight_mobile": 0.9,
+            "title": "Modern Design standards applied seamlessly to your online store",
+            "title_size": 56,
+            "title_size_mobile": 46,
+            "title_lineheight": 0.9,
+            "title_lineheight_mobile": 0.9,
             "destination": ""
           }
         }
