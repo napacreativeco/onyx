@@ -118,3 +118,26 @@
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    
+    .product-highlight-slider-row {
+        .product-highlights.swiper {
+            .swiper-slide {
+                position: relative;
+                aspect-ratio: 1/1;
+                background: var(--black);
+
+                .overlay {
+                    left: 20px;
+                    width: calc(100% - 40px);
+
+                    .title {
+                        font-size: var(--mobile-heading);
+                        margin: 0 0 20px 0;
+                    }
+                }
+            }
+        }
+    }
+}

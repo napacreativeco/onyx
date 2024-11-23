@@ -49,4 +49,28 @@
         height: auto;
     }
 
+
+    /* Testimonial Scripts */
+    .testimonial-swiper--desktop {
+        display: block;
+    }
+
+    .testimonial-swiper--mobile {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+	.testimonials-row {
+		
+        .testimonial-swiper--desktop {
+            display: none;
+        }
+    
+        .testimonial-swiper--mobile {
+            display: block;
+        }
+        
+	}
 }

@@ -43,3 +43,23 @@
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    
+    .newsletter-signup-row {
+        grid-template-columns: 1fr;
+
+        input[type="email"] {
+            font-size: 60%;
+        }
+    
+        input[type="email"]::placeholder {
+            font-size: 60%;
+        }
+    
+        input[type="submit"] {
+            font-size: 70% !important;
+        }
+    }
+
+}

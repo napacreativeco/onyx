@@ -9,6 +9,12 @@
     h2.testimonial-title {
         font-size: {{ section.settings.section_title_size }}px;
     }
+
+    @media screen and (max-width: 767px) {
+        h2.testimonial-title {
+            font-size: var(--mobile-heading);
+        }
+    }
 </style>
 
 <div class="testimonials-row">
@@ -24,7 +30,24 @@
     </div>
 
 
-    <div class="testimonial-swiper swiper">
+    <div class="testimonial-swiper--desktop testimonials-desktop swiper">
+        <div class="swiper-wrapper">
+            
+            {% for block in section.blocks %}
+                <div class="swiper-slide testimonial">
+                    <div class="text">
+                        {{ block.settings.text }}
+                    </div>
+                    <div class="author">
+                        {{ block.settings.author }}
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="testimonial-swiper--mobile testimonials-mobile swiper">
         <div class="swiper-wrapper">
             
             {% for block in section.blocks %}

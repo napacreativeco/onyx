@@ -57,10 +57,26 @@
     {{ settings.header_font | font_face }}
 
     :root {
+      /* Font Families */
       --body-font: {{ settings.body_font.family }};
       --header-font: {{ settings.header_font.family }};
 
+      /* Borders */
       --border-width: 2px;
+
+      /* Font Sizing */
+      --heading-small: 38px;
+      --heading: 44px;
+      --heading-large: 60px;
+
+      /* delete below */
+      --mobile-heading: 36px;
+    }
+
+    @media screen and (max-width: 767px) {
+      :root {
+
+      }
     }
 
     body {
@@ -218,8 +234,10 @@
         clickable: true
       }
     });
-
-    const testimonialSlider = new Swiper('.testimonial-swiper', {
+  </script>
+  
+  <script>
+    const testimonialSlider = new Swiper('.testimonial-swiper--desktop', {
       direction: 'horizontal',
       loop: true,
       navigation: {
@@ -227,6 +245,20 @@
         prevEl: '.swiper-button-prev',
       },
       slidesPerView: 3,
+      spaceBetween: 20,
+      autoHeight: false
+    });
+  </script>
+
+  <script>
+    const testimonialSliderMobile = new Swiper('.testimonial-swiper--mobile', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 1,
       spaceBetween: 20,
       autoHeight: false
     });

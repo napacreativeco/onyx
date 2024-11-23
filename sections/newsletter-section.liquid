@@ -13,11 +13,21 @@
     .newsletter-signup-row input[type="submit"] {
         font-size: {{ section.settings.email_placeholder_size }}px;
     }
+
+    .newsletter-signup-row h2.title {
+      font-size: {{ section.settings.section_title_size }}px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .newsletter-signup-row h2.title {
+        font-size: var(--mobile-heading);
+      }
+    }
 </style>
 
 <div class="newsletter-signup-row">
     <div class="left">
-        <h2 class="title" style="font-size: {{ section.settings.section_title_size }}px;">{{ section.settings.title }}</h2>
+        <h2 class="title">{{ section.settings.title }}</h2>
         <p class="description">{{ section.settings.description }}</p>
     </div>
     <div class="right">

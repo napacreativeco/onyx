@@ -1,4 +1,5 @@
 {{ 'component--hero-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component--hero-banner.css' | asset_url | stylesheet_tag }}
 
 <style>
   .hero-swiper {
@@ -109,10 +110,17 @@
         </div>
       {% endif %}
     </div>
+
   {% when 'single_banner' %}
     <div class="hero-banner">
       {% for block in section.blocks %}
-        {{ block.settings.banner_image }}
+        <img src="{{ block.settings.banner_image | image_url: width: 2200 }}" alt="{{ block.settings.banner_image.alt }}" />
+
+        <div class="banner-text">
+          <h3 class="subtitle">{{ block.settings.subtitle }}</h3>
+          <h2 class="title">{{ block.settings.title }}</h2>
+        </div>
+
       {% endfor %}
     </div>
           
@@ -287,6 +295,88 @@
               "type": "image_picker",
               "id": "banner_image",
               "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "type": "range",
+              "id": "subtitle_size",
+              "label": "Subtitle Size (Desktop)",
+              "min": 14,
+              "max": 24,
+              "step": 1,
+              "default": 18
+            },
+            {
+              "type": "range",
+              "id": "subtitle_size_mobile",
+              "label": "Subtitle Size (Mobile)",
+              "min": 10,
+              "max": 18,
+              "step": 1,
+              "default": 14
+            },
+            {
+              "type": "range",
+              "id": "subtitle_lineheight",
+              "label": "Subtitle Lineheight (Desktop)",
+              "min": 0.5,
+              "max": 1.5,
+              "step": 0.1,
+              "default": 0.9
+            },
+            {
+              "type": "range",
+              "id": "subtitle_lineheight_mobile",
+              "label": "Subtitle Lineheight (Mobile)",
+              "min": 0.5,
+              "max": 1.5,
+              "step": 0.1,
+              "default": 0.9
+            },
+            {
+              "type": "textarea",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "range",
+              "id": "title_size",
+              "label": "Title Size (Desktop)",
+              "min": 45,
+              "max": 64,
+              "step": 1,
+              "default": 56
+            },
+            {
+              "type": "range",
+              "id": "title_size_mobile",
+              "label": "Title Size (Mobile)",
+              "min": 35,
+              "max": 54,
+              "step": 1,
+              "default": 46
+            },
+            {
+              "type": "range",
+              "id": "title_lineheight",
+              "label": "Title Lineheight (Desktop)",
+              "min": 0.5,
+              "max": 1.5,
+              "step": 0.1,
+              "default": 0.9
+            },
+            {
+              "type": "range",
+              "id": "title_lineheight_mobile",
+              "label": "Title Lineheight (Mobile)",
+              "min": 0.5,
+              "max": 1.5,
+              "step": 0.1,
+              "default": 0.9
             },
             {
               "type": "url",

@@ -12,12 +12,29 @@
         grid-template-columns: repeat({{ block_count }}, minmax(0, 1fr));
         grid-gap: {{ section.settings.column_spacing }}px;
     }
+
+    .multi-column-row .title h2 {
+        font-size: {{ section.settings.section_title_size }}px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .multi-column-row .title h2 {
+            font-size: calc({{ section.settings.section_title_size }}px - 10px);
+        }
+
+        .multi-column-row .columns {
+            grid-template-columns: 1fr;
+            grid-gap: calc({{ section.settings.column_spacing }}px + 20px);
+        }
+    }
+
+}
 </style>
 
 <div class="multi-column-row">
 
     <div class="title" style="padding-bottom: {{ section.settings.title_spacing }}px;">
-        <h2 style="font-size: {{ section.settings.section_title_size }}px; text-align: {{ section.settings.title_text_align }};">{{ section.settings.title }}</h2>
+        <h2 style="text-align: {{ section.settings.title_text_align }};">{{ section.settings.title }}</h2>
     </div>
 
     <div class="columns">

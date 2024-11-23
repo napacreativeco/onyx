@@ -1,0 +1,28 @@
+.collection-page {
+
+    .products-container {
+
+        ul.products {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-gap: 14px;
+
+            .product-item {
+                .image {
+                    object-fit: cover;
+                    aspect-ratio: 4/5;
+                    
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+
+                .title {
+                    font-family: var(--header-font);
+                }
+            }
+        }
+
+    }
+}
