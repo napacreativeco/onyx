@@ -33,16 +33,16 @@
           "type": "banner",
           "settings": {
             "banner_image": "shopify://shop_images/model-in-neutral-colors-by-window.jpg",
-            "subtitle": "THRONE BANNER",
-            "subtitle_size": 18,
-            "subtitle_size_mobile": 14,
-            "subtitle_lineheight": 0.9,
-            "subtitle_lineheight_mobile": 0.9,
-            "title": "This is a single banner Hero",
-            "title_size": 56,
-            "title_size_mobile": 46,
-            "title_lineheight": 0.9,
-            "title_lineheight_mobile": 0.9,
+            "banner_subtitle": "THRONE SUBTITLE",
+            "banner_subtitle_size": 18,
+            "banner_subtitle_size_mobile": 14,
+            "banner_subtitle_lineheight": 0.9,
+            "banner_subtitle_lineheight_mobile": 0.9,
+            "banner_title": "Throne slide banner title goes here",
+            "banner_title_size": 56,
+            "banner_title_size_mobile": 46,
+            "banner_title_lineheight": 0.9,
+            "banner_title_lineheight_mobile": 0.9,
             "destination": ""
           }
         }
