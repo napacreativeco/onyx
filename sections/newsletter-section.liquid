@@ -3,7 +3,6 @@
 <style>
     .newsletter-signup-row {
         margin: 0 0 {{ section.settings.bottom_margin }}px 0;
-        padding: 0 {{ section.settings.side_padding }}px;
     }
 
     .newsletter-signup-row input[type="email"] {
@@ -42,7 +41,7 @@
     {
       "name": "Newsletter Signup",
       "tag": "section",
-      "class": "newsletter-signup",
+      "class": "newsletter-signup has-section-padding",
       "limit": 1,
       "settings": [
         {
@@ -87,15 +86,6 @@
           "label": "Subscribe Text",
           "info": "The submit button text",
           "default": "Subscribe"
-        },
-        {
-            "type": "range",
-            "id": "side_padding",
-            "label": "Side Padding",
-            "min": 0,
-            "max": 24,
-            "step": 1,
-            "default": 12
         },
         {
             "type": "range",

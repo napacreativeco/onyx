@@ -1,1 +1,1 @@
-.hero-banner{width:100%;aspect-ratio:16/9;overflow:hidden}.hero-banner img{width:100%;display:block;-o-object-fit:cover;object-fit:cover;-o-object-position:center center;object-position:center center}
+.hero-banner{width:100%;aspect-ratio:16/9;overflow:hidden;display:block}.hero-banner img{width:100%;display:block;-o-object-fit:cover;object-fit:cover;-o-object-position:center center;object-position:center center}.hero-banner .banner-text{position:absolute;bottom:40px;left:40px}

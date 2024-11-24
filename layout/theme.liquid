@@ -110,18 +110,6 @@
 
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: {{ settings.header_font.family }} !important;
-    }
-
-    p {
-      font-family: {{ settings.body_font.family }} !important;
-    }
-
-    .accent-font {
-      font-family: {{ settings.accent_font.family }} !important;
-    }
-
     body.dark_mode button {
       background: {{ settings.button_background_color_dark }};
       color: {{ settings.button_text_color_dark }};
@@ -130,6 +118,36 @@
     body.light_mode button {
       background: {{ settings.button_background_color_light }};
       color: {{ settings.button_text_color_light }};
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: {{ settings.header_font.family }} !important;
+      letter-spacing: {{ settings.header_letter_spacing }}px;
+      line-height: {{ settings.heading_line_height }};
+    }
+
+    p, button {
+      font-family: {{ settings.body_font.family }} !important;
+      letter-spacing: {{ settings.body_letter_spacing }}px;
+      line-height: {{ settings.body_line_height }};
+    }
+
+    .title-font {
+      font-family: var(--header-font);
+    }
+
+    .body-font {
+      font-family: var(--body-font);
+    }
+
+    .accent-font {
+      font-family: {{ settings.accent_font.family }} !important;
+      letter-spacing: {{ settings.accent_letter_spacing }}px;
+      line-height: {{ settings.accent_line_height }};
+    }
+
+    .has-section-padding {
+      padding: 0 {{ settings.global_section_padding }}px;
     }
   </style>
 

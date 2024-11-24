@@ -5,14 +5,25 @@
   .hero-swiper {
     margin-bottom: {{ section.settings.hero_margin_bottom }}px;
   }
-  .swiper-slide {
+
+  .hero-banner {
+    margin-bottom: {{ section.settings.hero_margin_bottom }}px;
+  }
+
+  .swiper-slide, .banner-image {
     opacity: {{ section.settings.hero_image_tint }};
   }
 </style>
 
 {% case section.settings.hero_mode %}
 
+  {% comment %} 
+  //=========================
+  // SLIDESHOW
+  //=========================
+  {% endcomment %}
   {% when 'slideshow_mode' %}
+
     <div class="swiper hero-swiper">
       
       <div class="swiper-wrapper">
@@ -53,20 +64,23 @@
             {% endif %}
 
             <div class="slide-text">
-              <h3 class="subtitle">{{ block.settings.subtitle }}</h3>
-              <h2 class="title">{{ block.settings.title }}</h2>
+              <h3 class="subtitle">
+                <a href="{{ block.settings.destination }}" title="{{ block.settings.subtitle }}">
+                  {{ block.settings.subtitle }}
+                </a>
+              </h3>
+              <h2 class="title">
+                <a href="{{ block.settings.destination }}" title="{{ block.settings.title }}">
+                  {{ block.settings.title }}
+                </a>
+              </h2>
             </div>
 
           </div>
         {% endfor %}
       </div>
 
-
-      {% comment %} 
-      //=========================
-      // OVERLAY NAVIGATION
-      //=========================
-      {% endcomment %}
+      {% comment %} OVERLAY NAVIGATION {% endcomment %}
       {% if section.settings.hero_nav_mode == 'overlay_navigation' %}
         <div class="swiper-navigation overlay">
 
@@ -86,11 +100,7 @@
         </div>
       {% endif %}
 
-      {% comment %} 
-      //=========================
-      // BELOW NAVIGATION
-      //=========================
-      {% endcomment %}
+      {% comment %} BELOW NAVIGATION {% endcomment %}
       {% if section.settings.hero_nav_mode == 'below_navigation' %}
         <div class="swiper-navigation below">
 
@@ -111,37 +121,55 @@
       {% endif %}
     </div>
 
+  {% comment %} 
+  //=========================
+  // BANNER
+  //=========================
+  {% endcomment %}
   {% when 'single_banner' %}
-
-    <style>
-      .slide-text h3.subtitle {
-        font-size: {{ block.settings.banner_subtitle_size }}px;
-        line-height: {{ block.settings.banner_subtitle_lineheight }};
-      }
-      .slide-text h2.title {
-        font-size: {{ block.settings.banner_title_size }}px;
-        line-height: {{ block.settings.banner_title_lineheight }};
-      }
-
-      @media screen and (max-width: 767px) {
-        .slide-text h3.subtitle {
-          font-size: {{ block.settings.banner_subtitle_size_mobile }}px;
-          line-height: {{ block.settings.banner_subtitle_lineheight_mobile }};
-        }
-        .slide-text h2.title {
-          font-size: {{ block.settings.banner_title_size_mobile }}px;
-          line-height: {{ block.settings.banner_title_lineheight_mobile }};
-        }
-      }
-    </style>
 
     <div class="hero-banner">
       {% for block in section.blocks %}
-        <img src="{{ block.settings.banner_image | image_url: width: 2200 }}" alt="{{ block.settings.banner_image.alt }}" />
+
+        <style>
+          .banner-text .subtitle {
+            font-size: {{ block.settings.banner_subtitle_size }}px;
+            line-height: {{ block.settings.banner_subtitle_lineheight }};
+          }
+          .banner-text .title {
+            font-size: {{ block.settings.banner_title_size }}px;
+            line-height: {{ block.settings.banner_title_lineheight }};
+          }
+    
+          @media screen and (max-width: 767px) {
+            .banner-text .subtitle {
+              font-size: {{ block.settings.banner_subtitle_size_mobile }}px;
+              line-height: {{ block.settings.banner_subtitle_lineheight_mobile}};
+            }
+            .banner-text .title {
+              font-size: {{ block.settings.banner_title_size_mobile }}px;
+              line-height: {{ block.settings.banner_title_lineheight_mobile }};
+            }
+          }
+        </style>
+
+        {% if block.settings.banner_image == blank %}
+          {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% else %}
+          <img class="banner-image" src="{{ block.settings.banner_image | image_url: width: 2200 }}" alt="{{ block.settings.banner_image.alt }}" />
+        {% endif %}
 
         <div class="banner-text">
-          <h3 class="subtitle">{{ block.settings.banner_subtitle }}</h3>
-          <h2 class="title">{{ block.settings.banner_title }}</h2>
+          <p class="subtitle">
+            <a class="body-font" href="{{ block.settings.banner_destination }}" title="{{ block.settings.banner_subtitle }}">
+              {{ block.settings.banner_subtitle }}
+            </a>
+          </p>
+          <h2 class="title">
+            <a href="{{ block.settings.banner_destination }}" title="{{ block.settings.banner_title }}">
+              {{ block.settings.banner_title }}
+            </a>
+          </h2>
         </div>
 
       {% endfor %}
@@ -403,7 +431,7 @@
             },
             {
               "type": "url",
-              "id": "destination",
+              "id": "banner_destination",
               "label": "URL"
             }
           ]
